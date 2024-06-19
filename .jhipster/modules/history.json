@@ -1,0 +1,368 @@
+{
+  "actions": [
+    {
+      "module": "init",
+      "date": "2023-10-20T14:11:30.687179100Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "maven-java",
+      "date": "2023-10-20T14:14:23.726399600Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "java-base",
+      "date": "2023-10-20T14:14:24.086490Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "spring-boot",
+      "date": "2023-10-20T14:14:24.590923800Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "prettier",
+      "date": "2023-10-20T14:45:44.037487600Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "vue-core",
+      "date": "2023-10-20T14:45:44.448628600Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "dockerfile",
+      "date": "2023-10-20T14:45:52.311115600Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "gitlab-ci",
+      "date": "2023-10-20T14:45:52.585253800Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "jib",
+      "date": "2023-10-20T14:45:52.927117800Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "spring-boot-mvc-empty",
+      "date": "2023-10-20T14:46:14.241492100Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "frontend-maven-plugin",
+      "date": "2023-10-20T14:46:14.649713100Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "java-archunit",
+      "date": "2023-10-20T14:46:19.355989500Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "mongodb",
+      "date": "2023-10-20T14:46:47.607284300Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "init",
+      "date": "2023-10-25T07:04:19.361665700Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "maven-java",
+      "date": "2023-10-25T07:04:21.873563700Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "prettier",
+      "date": "2023-10-25T07:04:22.562257600Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "dockerfile",
+      "date": "2023-10-25T07:04:23.038066Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "gitlab-ci",
+      "date": "2023-10-25T07:04:23.503913Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "java-base",
+      "date": "2023-10-25T07:04:24.053371100Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "jib",
+      "date": "2023-10-25T07:04:24.602767800Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "vue-core",
+      "date": "2023-10-25T07:04:25.153436800Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "spring-boot",
+      "date": "2023-10-25T07:04:26.034934100Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "mongodb",
+      "date": "2023-10-25T07:04:26.963461800Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "spring-boot-mvc-empty",
+      "date": "2023-10-25T07:04:27.762614200Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "frontend-maven-plugin",
+      "date": "2023-10-25T07:04:29.268676200Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "java-archunit",
+      "date": "2023-10-25T07:04:30.507768Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080
+      }
+    },
+    {
+      "module": "sonar-qube-java-backend-and-frontend",
+      "date": "2023-11-10T15:45:58.191698400Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080,
+        "configurationFormat": "properties"
+      }
+    },
+    {
+      "module": "logs-spy",
+      "date": "2023-11-10T15:46:52.530170200Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080,
+        "configurationFormat": "properties"
+      }
+    },
+    {
+      "module": "spring-boot-tomcat",
+      "date": "2023-11-10T15:46:53.953020700Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080,
+        "configurationFormat": "properties"
+      }
+    },
+    {
+      "module": "vue-pinia",
+      "date": "2023-11-24T16:08:02.925792600Z",
+      "properties": {
+        "packageName": "com.soprasteria",
+        "projectName": "OSCA",
+        "baseName": "osca",
+        "endOfLine": "lf",
+        "indentSize": 2,
+        "serverPort": 8080,
+        "configurationFormat": "properties"
+      }
+    }
+  ]
+}

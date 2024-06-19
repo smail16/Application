@@ -1,0 +1,63 @@
+<div class="app-maquette">
+    <Accordion>
+        <AccordionTab :header="t('AppMaquette.header')" class="titre-accordion header">
+            <div class="card-upload">
+                <Toast />
+                <FileUpload
+                    name="maquette"
+                    :chooseLabel="t('AppMaquette.chooseLabel')"
+                    :showUploadButton="false"
+                    :showCancelButton="false"
+                    :custom-upload="true"
+                    @uploader="onAdvancedUpload"
+                    accept=".png,.jpeg,.jpg"
+                    :auto="true"
+                    :disabled="sousRubriqueMaquetteList && sousRubriqueMaquetteList.length >= 5"
+                >
+                    <template #content>
+                        <div v-if="sousRubriqueMaquetteList && sousRubriqueMaquetteList.length > 0">
+                            <div class="flex flex-wrap justify-content-center p-0 gap-5">
+                                <div
+                                    v-for="(file, index) of sousRubriqueMaquetteList"
+                                    class="card m-0 flex flex-column align-items-center gap-3"
+                                >
+                                    <ImagePrime
+                                        :alt="file.filename"
+                                        :src="`data:${file.fileType};base64,` + file.maquette"
+                                        alt="Image"
+                                        preview
+                                    >
+                                        <template #indicatoricon>
+                                            <div class="icons-maquette">
+                                                <i
+                                                    class="pi pi-trash pi-maquette"
+                                                    @click="eventStop($event);maquetteToDelete=file.identifiant; visible = true"
+                                                ></i>
+                                                <i
+                                                    class="pi pi-download pi-maquette"
+                                                    @click="downloadMaquette(file.identifiant, $event)"
+                                                ></i>
+                                            </div>
+                                        </template>
+                                    </ImagePrime>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-if="sousRubriqueMaquetteList && sousRubriqueMaquetteList.length === 0" #empty>
+                        <div>
+                            <p>{{ t("AppUpload.telecharger") }}</p>
+                            <p class="taille-max">{{ t("AppUpload.taille") }}</p>
+                            <p class="format">{{ t("AppUpload.format") }}</p>
+                        </div>
+                    </template>
+                </FileUpload>
+                <DialogueDeleteMaquette
+                    v-model:visible="visible"
+                    :maquetteToDelete="maquetteToDelete"
+                    :deleteFromSousRubriqueList="deleteFromSousRubriqueList"
+                />
+            </div>
+        </AccordionTab>
+    </Accordion>
+</div>

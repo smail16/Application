@@ -1,0 +1,1538 @@
+[
+    {
+        "version": "4.2",
+        "rubriques": [
+            {
+                "titre": "1. Images",
+                "keyRubriques": "1",
+                "sousRubriques": [
+                    {
+                        "titre": "1.1 Images pertinentes ou décoratives",
+                        "keySousRubriques": "1.1",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Toute image est identifiée en tant qu'image pertinente ou décorative.",
+                                "keyFeuilleDeRouteUX": "1.1.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Toute image est identifiée en tant qu'image pertinente ou décorative",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "1.1.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Les images complexes sont identifiées ainsi que la manière dont elles sont traitées : description ou lien redirigeant vers l'information",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "1.1.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Une image pertinente apporte des informations structurantes à la compréhension du contenu",
+                                        "keyPratiqueUX": "1.1.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Une image décorative ne sert pas à la compréhension. Elle peut être enlevée sans impacter le parcours utilisateur.",
+                                        "keyPratiqueUX": "1.1.1.2"
+                                    },
+                                    {
+                                        "pratiqueUX": "Une image complexe peut soit être associée à une description longue (action dev : attribut longdesc), soit contenir un lien renvoyant vers un texte descriptif.",
+                                        "keyPratiqueUX": "1.1.1.3"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Une image peut apporter des informations structurantes à la compréhension du contenu. Il faut donc aider les utilisateurs placés dans des contextes où les images ne sont pas perceptibles.",
+                                "keyFeuilleDeRouteFonc": "1.1.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les textes (alternatifs, légendes, descriptions) sont définis de manière pertinente",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "1.1.2.1"
+                                    },
+                                    {
+                                        "critereFonc": "Le texte des images texte est défini",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "1.1.2.2"
+                                    },
+                                    {
+                                        "critereFonc": "Les images pertinentes portent une description détaillée si nécessaire",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "1.1.2.3"
+                                    },
+                                    {
+                                        "critereFonc": "L'alternative ou la description sont définies pour les images complexes",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "1.1.2.4"
+                                    },
+                                    {
+                                        "critereFonc": "Les légendes des images complexes sont définies",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "1.1.2.5"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Un texte alternatif d'une image doit rester concise (120 caractères maximum).",
+                                        "keyPratiqueFonc": "1.1.2.1"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Un texte pertinent décrit l'information véhiculée par l'image.",
+                                        "keyPratiqueFonc": "1.1.2.2"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Une image n'a pas d'intérêt d'être décrite si elle n'apporte pas d'information (ex : puces, bordures, images décoratives).",
+                                        "keyPratiqueFonc": "1.1.2.3"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Dans le cas d'une icône représentant un document à télécharger, il ne faut pas préciser de description mais le titre du document, le format et le poids du fichier.",
+                                        "keyPratiqueFonc": "1.1.2.4"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Une image texte est un texte qui est inséré en tant qu'image. Ex : un logo.",
+                                        "keyPratiqueFonc": "1.1.2.5"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Une image peut apporter des informations structurantes à la compréhension du contenu. Il faut donc aider les utilisateurs placés dans des contextes où les images ne sont pas perceptibles",
+                                "keyFeuilleDeRouteDev": "1.1.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Toutes les images décoratives ont un attribut alt vide (alt=\"\")",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.1.3.1"
+                                    },
+                                    {
+                                        "critereDev": "Les légendes d'images sont correctement reliées à l'image correspondante",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.1.3.2"
+                                    },
+                                    {
+                                        "critereDev": "Pour les éléments <img>, <area> : donner un attribut alt indiquant la cible ou le rôle du lien",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.1.3.3"
+                                    },
+                                    {
+                                        "critereDev": "Les descriptions longues sont associées à l'attribut longdesc.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.1.3.4"
+                                    },
+                                    {
+                                        "critereDev": "laisser vide les contenus des éléments object  et canvas : <object> </object>  <canvas> </canvast>",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.1.3.5"
+                                    },
+                                    {
+                                        "critereDev": "Indiquer la cible ou le rôle du lien dans le contenu de chaque élément <object> ou <canvas> concerné",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.1.3.6"
+                                    },
+                                    {
+                                        "critereDev": "Chaque image texte porteuse d'information, en l'absence d'un mécanisme de remplacement, doit si possible être remplacée par du texte stylé",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.1.3.7"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Une image pertinente apporte des informations structurantes à la compréhension du contenu",
+                                        "keyPratiqueDev": "1.1.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "Une image décorative ne sert pas à la compréhension. Elle peut être enlevée sans impacter le parcours utilisateur.",
+                                        "keyPratiqueDev": "1.1.3.2"
+                                    },
+                                    {
+                                        "pratiqueDev": "Une image complexe peut soit être associée à une description longue (action dev : attribut longdesc), soit contenir un lien renvoyant vers un texte descriptif.",
+                                        "keyPratiqueDev": "1.1.3.3"
+                                    },
+                                    {
+                                        "pratiqueDev": "Utiliser les textes HTML mis en forme à l'aide des styles CSS.",
+                                        "keyPratiqueDev": "1.1.3.4"
+                                    },
+                                    {
+                                        "pratiqueDev": "Ne pas donner à des éléments svg concernés un attribut ARIA qui donne une etiquette (aria-labeldedby, aria-decribedby)",
+                                        "keyPratiqueDev": "1.1.3.5"
+                                    },
+                                    {
+                                        "pratiqueDev": "La balise <figure> possède un attribut WAI-ARIA role=\"figure\" ou role=\"group\".",
+                                        "keyPratiqueDev": "1.1.3.6"
+                                    },
+                                    {
+                                        "pratiqueDev": "La légende adjacente est contenue dans une balise <figure> Ou La légende est contenue dans une balise <figcaption>.",
+                                        "keyPratiqueDev": "1.1.3.7"
+                                    },
+                                    {
+                                        "pratiqueDev": "Comment identifier les images-liens ? elles sont le seul contenu placé entre des balises <a> et </a>",
+                                        "keyPratiqueDev": "1.1.3.8"
+                                    },
+                                    {
+                                        "pratiqueDev": "La balise <figure> possède un attribut WAI-ARIA aria-label dont le contenu est identique au contenu de la légende.",
+                                        "keyPratiqueDev": "1.1.3.9"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "1.2 Captcha",
+                        "keySousRubriques": "1.2",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Le système captcha peut être bloquant pour certains utilisateurs.",
+                                "keyFeuilleDeRouteUX": "1.2.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Chaque image utilisée comme CAPTCHA a une solution d'accès alternatif au contenu.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "1.2.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Chaque image captcha a une alternative texuelle.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "1.2.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Chaque image captcha a une forme non graphique (ou il existe une autre solution d'accès à la fonctionnalité hors captcha).",
+                                        "keyPratiqueUX": "1.2.1.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Le système captcha peut être bloquant pour certains utilisateurs.",
+                                "keyFeuilleDeRouteFonc": "1.2.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Chaque image captcha a une alternative texuelle pertinente.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "1.2.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Le texte de remplacement d'une image captcha doit permet d'identifier la nature et la fonction de l'image.",
+                                        "keyPratiqueFonc": "1.2.2.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Le système captcha peut être bloquant pour certains utilisateurs.",
+                                "keyFeuilleDeRouteDev": "1.2.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Chaque image utilisée comme CAPTCHA a une alternative textuelle",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "1.2.3.1"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Le contenu de l'attribut WAI-ARIA aria-label est défini.",
+                                        "keyPratiqueDev": "1.2.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "titre": "2. Présentation de l'information",
+                "keyRubriques": "2",
+                "sousRubriques": [
+                    {
+                        "titre": "2.1 Lisibilité de l'information",
+                        "keySousRubriques": "2.1",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Les liens doivent être repérables immédiatement dans la page pour permettre une bonne navigation",
+                                "keyFeuilleDeRouteUX": "2.1.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Les liens sont visibles sans survol nécéssaire pour le vérifier.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.1.1.1"
+                                    },
+                                    {
+                                        "critereUX": "L'information n'est pas donnée uniquement par la forme, la taille ou la position. ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.1.1.2"
+                                    },
+                                    {
+                                        "critereUX": "Les blocs Header, Main, Navigation, Footer sont définis.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.1.1.3"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Dans chaque page web, le texte reste lisible lorsque l'affichage est modifié selon ces conditions: 1. L'espacement entre les lignes (line-height) est augmenté jusqu'à 1,5 fois la taille de la police; 2. L'espacement suivant les paragraphes (balise <p>) est augmenté jusqu'à 2 fois la taille de la police; 3. L'espacement des lettres (letter-spacing) est augmenté jusqu'à 0,12 fois la taille de la police; 4. L'espacement des mots (word-spacing) est augmenté jusqu'à 0,16 fois la taille de la police.",
+                                        "keyPratiqueUX": "2.1.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Définir pour le lien: 1. la couleur du lien; 2. l'indication visuelle au survol; 3. l'indication visuelle au focus.",
+                                        "keyPratiqueUX": "2.1.1.2"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Non défini",
+                                "keyFeuilleDeRouteFonc": "2.1.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "L'action sur le contrôle des éléments apparaissant à la prise de focus ou au survol sont définis.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "2.1.2.1"
+                                    },
+                                    {
+                                        "critereFonc": "Dans chaque page web, chaque contenu cryptique (art ASCII, émoticon, syntaxe cryptique) a une alternative pertinente.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "2.1.2.2"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Un texte pertinent décrit l'information véhiculée par l'image.",
+                                        "keyPratiqueFonc": "2.1.2.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Absence d'attributs de présentation et gestion des espaces",
+                                "keyFeuilleDeRouteDev": "2.1.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "La zone d'en-tête de la page est structurée via une balise <header>, et a un role=\"\" relié.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.1"
+                                    },
+                                    {
+                                        "critereDev": "Les zones de navigation principales et secondaires sont structurées via une balise <nav>, et sont les seules à utiliser cette balise.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.2"
+                                    },
+                                    {
+                                        "critereDev": "La zone de contenu principal est structurée via une balise <main>, visible et unique.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.3"
+                                    },
+                                    {
+                                        "critereDev": "La zone de pied de page est structurée via une balise <footer>",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.4"
+                                    },
+                                    {
+                                        "critereDev": "Les listes sont identifiées : ul et il pour les listes non ordonnées; ol et li pour les listes ordonnées; dl, dt et dd pour les listes de définitions ou de descriptions Ou, recourir aux attrbuts ARIA donnant la sémantique d'une liste non ordonnée ou ordonnée ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.5"
+                                    },
+                                    {
+                                        "critereDev": "Dans chaque page web, pour chaque élément recevant le focus, la prise de focus est visible.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.6"
+                                    },
+                                    {
+                                        "critereDev": "Dans chaque page web, les contenus additionnels apparaissant via les styles CSS uniquement peuvent-ils être rendus visibles au clavier et par tout dispositif de pointage",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.7"
+                                    },
+                                    {
+                                        "critereDev": "Les citations sont correctement indiquées : une citation courte utilise la balise <q>, un bloc de citation utilise la balise <blockquote>.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.8"
+                                    },
+                                    {
+                                        "critereDev": "L'effet visuel de prise de focus qui indique l'élément atteint lors de la navigation au clavier n'est ni masqué ni supprimé. ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.9"
+                                    },
+                                    {
+                                        "critereDev": "les propriétés display, visibility ainsi que l'attribut HTML hidden pour masquer le contenu ne sont pas utilisés (sauf si le contenu est destibé à être caché). Utiliser la class=\"sr-only\" à la place.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.10"
+                                    },
+                                    {
+                                        "critereDev": "Les espaces ne sont pas utilisés pour séparer les lettres d'un mot. Les espaces ne sont pas utilisés pour simuler des tableaux. Les espaces ne sont pas utilisés pour simuler des colonnes de texte.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.11"
+                                    },
+                                    {
+                                        "critereDev": "Ne pas utiliser de mécanisme bloquant le zoom, et en particulier, ne pas utiliser les attributs minimum-scale, maximum-scale et user-scalable de l’élément meta viewport.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.12"
+                                    },
+                                    {
+                                        "critereDev": "Absence des éléments de présentation <basefont>, <big>, <blink>, <center>, <font>, <marquee>, <s>, <strike>, <tt> ;",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.13"
+                                    },
+                                    {
+                                        "critereDev": "Absence de l'élément <u> uniquement si le DOCTYPE du document ne correspond pas à HTML 5.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.14"
+                                    },
+                                    {
+                                        "critereDev": "Absence des attributs de présentation : align, alink, background, bgcolor, border, cellpadding, cellspacing, char, charoff, clear, color, compact, frameborder, hspace, link, marginheight, marginwidth, text, valign, vlink, vspace, size(exception faite de l’élément <select>), width (exception faite des éléments <img>, <object>, <embed>, <canvas> et <svg>), height (exception faite des éléments <img>, <object>, <embed>, <canvas> et <svg>) ;",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.1.3.15"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Le site ne bloque pas les fonctionnalités de zoom du navigateur.",
+                                        "keyPratiqueDev": "2.1.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "Les listes ne doivent pas être constituées à base de tiret, d'astérisques, de puces sous forme d'image. Elles doivent être constituées à base d'éléments HTML.",
+                                        "keyPratiqueDev": "2.1.3.2"
+                                    },
+                                    {
+                                        "pratiqueDev": "Le style du focus natif du navigateur n'est pas supprimé ou dégradé; Un style du focus défini par l'auteur est visible.",
+                                        "keyPratiqueDev": "2.1.3.3"
+                                    },
+                                    {
+                                        "pratiqueDev": "Ne pas masquer ou supprimer l'effet visuel de prise de focus qui indique l'élément atteint lors de la navigation au clavier. Ne pas annuler la valeur par défaut de la propriété CSS outline sans la remplacer par une autre valeur",
+                                        "keyPratiqueDev": "2.1.3.4"
+                                    },
+                                    {
+                                        "pratiqueDev": "Ne pas donner au contenu un attribut ARIA aria-hidden = true; 4. Ne pas utiliser le paramètre wmode d'un objet Flash avec les valeurs transparent ou opaque Mais : 1. Utiliser les propréiéts CSS pour positionner le contenu; 2. associer les attributs title des étiquettes de champs de formulaire ",
+                                        "keyPratiqueDev": "2.1.3.5"
+                                    },
+                                    {
+                                        "pratiqueDev": "Conserver la cohérence des contenus pour les présenter dans le même ordre avec ou sans mise en forme CSS; 2. Fournir une alternative appropriée pour les contenus générés via les styles ",
+                                        "keyPratiqueDev": "2.1.3.6"
+                                    },
+                                    {
+                                        "pratiqueDev": "Dans chaque page web, chaque déclaration CSS de couleurs de police (color), d'un élément susceptible de contenir du texte, est accompagnée d'une déclaration de couleur de fond (background, background-color), au moins héritée d'un parent; 2. Dans chaque page web, chaque déclaration de couleur de fond (background, background-color), d'un élément susceptible de contenir du texte, est accompagnée d'une déclaration de couleur de police (color), au moins héritée d'un parent; 3. Dans chaque page web, chaque utilisation d'une image pour créer une couleur de fond d'un élément susceptible de contenir du texte, via CSS (background, background-image), est accompagnée d'une déclaration de couleur de fond (background, background-color), au moins héritée d'un parent ",
+                                        "keyPratiqueDev": "2.1.3.7"
+                                    },
+                                    {
+                                        "pratiqueDev": "Eviter d'utiliser <br> en général, préférer une class avec style=\"margin-top : 3px\"",
+                                        "keyPratiqueDev": "2.1.3.8"
+                                    }                                 
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "2.2 Utilisabilité",
+                        "keySousRubriques": "2.2",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Non défini",
+                                "keyFeuilleDeRouteUX": "2.2.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "1. La consultation est possible quel que soit le mode d'orientation de l'écran. 2. Le contenu proposé reste le même quel que soit le mode d'orientation de l'écran utilisé même si sa présentation et le moyen d'y accéder peut différer.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.2.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Les gestes complexes sont identifiés",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.2.1.2"
+                                    },
+                                    {
+                                        "critereUX": "Dans chaque page web, les fonctionnalités qui impliquent un mouvement de l'appareil ou vers l'appareil peuvent-elles être satisfaites de manière alternative",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.2.1.3"
+                                    },
+                                    {
+                                        "critereUX": "Pour chaque page web, les contenus peuvent être présentés sans perte d'information ou de fonctionnalité et sans avoir recours soit à un défilement vertical pour une fenêtre ayant une hauteur de 256px, soit à un défilement horizontal pour une fenêtre ayant une largeur de 320px (hors cas particuliers)",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.2.1.4"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Spécifier les comportements; L'action est déclenchée au moment où le dispositif de pointage est relâché ou relevé ;L'action est déclenchée au moment où le dispositif de pointage est pressé ou posé puis annulée lorsque le dispositif de pointage est relâché ou relevé ; Un mécanisme est disponible pour abandonner (avant achèvement de l'action) ou annuler (après achèvement) l'exécution de l'action ;",
+                                        "keyPratiqueUX": "2.2.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "L'action est déclenchée au moment où le dispositif de pointage est relâché ou relevé; L'action est déclenchée au moment où le dispositif de pointage est pressé ou posé puis annulée lorsque le dispositif de pointage est relâché ou relevé ;Un mécanisme est disponible pour abandonner (avant achèvement de l'action) ou annuler (après achèvement) l'exécution de l'action ;",
+                                        "keyPratiqueUX": "2.2.1.2"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Non défini",
+                                "keyFeuilleDeRouteFonc": "2.2.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les gestes complexes sont spécifiés",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "2.2.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Un geste complexe est un geste nécéssitant plusieurs doigts pour faire l'opération (ex : zoom sur mobile) ou demandant de suivre une trajectoire exacte (ex : drag and drop).",
+                                        "keyPratiqueFonc": "2.2.2.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Non défini",
+                                "keyFeuilleDeRouteDev": "2.2.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "les actions déclenchées au moyen d'un dispositif de pointage sur un point unique de l'écran doivent pouvoir faire l'objet d'une annulation.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.2.3.1"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "L'implémentation responsive est réalisée.",
+                                        "keyPratiqueDev": "2.2.3.1"
+                                    }
+                                    
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "2.3 Comportement automatique",
+                        "keySousRubriques": "2.3",
+                        "sousRubriqueUx": [],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Non défini",
+                                "keyFeuilleDeRouteFonc": "2.3.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Il n'y a pas de procédé de /afraichissement inopiné",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "2.3.2.1"
+                                    },
+                                    {
+                                        "critereFonc": "L'utilisateur est averti des ouvertures de nouvelles fenêtres, popup",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "2.3.2.2"
+                                    },
+                                    {
+                                        "critereFonc": "Les documents en téléchargement sont accessibles",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "2.3.2.3"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Règles des rafraichissements :L'utilisateur peut arrêter ou relancer le rafraîchissement ; L'utilisateur peut augmenter la limite de temps entre deux rafraîchissements de dix fois, au moins ; L'utilisateur est averti de l'imminence du rafraîchissement et dispose de vingt secondes, au moins, pour augmenter la limite de temps avant le prochain rafraîchissement ; La limite de temps entre deux rafraîchissements est de vingt heures, au moins.",
+                                        "keyPratiqueFonc": "2.3.2.1"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Il n'y a pas de changement brusque de luminosité non contrôlable par l'utilisateur",
+                                        "keyPratiqueFonc": "2.3.2.2"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Comment rendre un document accessible ? https://accessibilite.numerique.gouv.fr/methode/glossaire/#version-accessible-pour-un-document-en-telechargement",
+                                        "keyPratiqueFonc": "2.3.2.3"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": []
+                    },
+                    {
+                        "titre": "2.4 Présence de titres",
+                        "keySousRubriques": "2.4",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Les titres et sous-titres permettent aux navigateurs, moteurs et outils de vocalisatio de restituer la structure d'une page",
+                                "keyFeuilleDeRouteUX": "2.4.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Les titres sont identifiés pour chaque cadre ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.4.1.1"
+                                    },
+                                    {
+                                        "critereUX": "La page est structurée avec des titres et sous-titres (H1 à H6)",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.4.1.2"
+                                    },
+                                    {
+                                        "critereUX": "Il n'y a pas de trous dans la hierarchie avec au moins un titre de niveau 1",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "2.4.1.3"
+                                    }
+                                ],
+                                "pratiquesUXList": []
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Les titres et sous-titres permettent aux navigateurs, moteurs et outils de vocalisatio de restituer la structure d'une page.",
+                                "keyFeuilleDeRouteFonc": "2.4.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les titres sont pertinents",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "2.4.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": []
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Les titres et sous-titres permettent aux navigateurs, moteurs et outils de vocalisatio de restituer la structure d'une page.",
+                                "keyFeuilleDeRouteDev": "2.4.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Chaque cadre (balise <iframe> ou <frame>) a un attribut title ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "2.4.3.1"
+                                    }
+                                ],
+                                "pratiquesDevList": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "titre": "3. Formulaires",
+                "keyRubriques": "3",
+                "sousRubriques": [
+                    {
+                        "titre": "3.1 Cohérence de la présentation",
+                        "keySousRubriques": "3.1",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Les champs doivent être regroupés pour simplifier la lecture",
+                                "keyFeuilleDeRouteUX": "3.1.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "les champs sont regroupés le plus logiquement possible. Par exemple, tous les champs relatifs à la saisie d'adresse sont regroupés ensemble.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "3.1.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Les regroupements de champs ont idéalement un titre clair et concis",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "3.1.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Dans chaque formulaire, chaque regroupement de champs de même nature avec des intitulés identiques a une légende.",
+                                        "keyPratiqueUX": "3.1.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les regroupements logiques doivent être rapidement identifiés, donc un titre explicitant le regroupement est utile.",
+                                        "keyPratiqueUX": "3.1.1.2"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Les champs doivent être regroupés pour simplifier la lecture",
+                                "keyFeuilleDeRouteFonc": "3.1.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Dans chaque formulaire, chaque légende associée à un regroupement de champs de même nature est pertinente.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "3.1.2.1"
+                                    },
+                                    {
+                                        "critereFonc": "Dans chaque formulaire, les items de même nature d'une liste de choix sont regroupées de manière pertinente.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "3.1.2.2"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Les éléments des listes déroulantes doivent être restitués dans un ordre identifiable (alphabétique, numérique, chronologique, etc...)",
+                                        "keyPratiqueFonc": "3.1.2.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Les champs doivent être regroupés pour simplifier la lecture",
+                                "keyFeuilleDeRouteDev": "3.1.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "les regroupement via fieldset logiques sont réalisés",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "3.1.3.1"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Pour les listes déroulantes, utiliser l'élément optgroup pour baliser les regroupements thématiques d'éléments et option dans les listes select.",
+                                        "keyPratiqueDev": "3.1.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "Dans chaque formulaire, chaque regroupement de champs de même nature et ses légendes utilise les balises <fieldset> et <legend>.",
+                                        "keyPratiqueDev": "3.1.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "3.2 Lisibilité",
+                        "keySousRubriques": "3.2",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Les libellés permettent de comprendre l'objectif d'un champ de saisie, et essentiels pour les utilisateurs de lecteur d'écran.",
+                                "keyFeuilleDeRouteUX": "3.2.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Chaque champ de formulaire a un libellé (une etiquette) qui lui est propre.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "3.2.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Chaque etiquette est à proximité immédiate de son champ.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "3.2.1.2"
+                                    },
+                                    {
+                                        "critereUX": "Dans chaque formulaire, l'intitulé de chaque bouton est pertinent.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "3.2.1.3"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Le positionnement standard de l'etiquette par rapport au champ qu'elle décrit est de 30 pixels maximum à gauche du champ ou quelques pixels dans le cas d'une case radio ou à cocher.",
+                                        "keyPratiqueUX": "3.2.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Eviter les mises-en-forme de formulaire entraînant la présence d'un espace vide important entre un champ et son etiquette ou un positionnement inhabituel de l'etiquette (ex : en dessous du champ ou au-dessus d'une case à cocher).",
+                                        "keyPratiqueUX": "3.2.1.2"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les placeholders ne remplacent pas les etiquettes.",
+                                        "keyPratiqueUX": "3.2.1.3"
+                                    },
+                                    {
+                                        "pratiqueUX": "Chaque etiquette est pertinente.",
+                                        "keyPratiqueUX": "3.2.1.4"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Les libellés permettent de comprendre l'objectif d'un champ de saisie, et essentiels pour les utilisateurs de lecteur d'écran.",
+                                "keyFeuilleDeRouteFonc": "3.2.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Chaque étiquette associée à un champ de formulaire est pertinente.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "3.2.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Dans chaque formulaire, chaque étiquette associée à un champ de formulaire ayant la même fonction et répété plusieurs fois dans une même page ou dans un ensemble de pages est cohérente.",
+                                        "keyPratiqueFonc": "3.2.2.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Les libellés permettent de comprendre l'objectif d'un champ de saisie, et essentiels pour les utilisateurs de lecteur d'écran.",
+                                "keyFeuilleDeRouteDev": "3.2.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Les étiquettes visibles sont définies pour chaque champ: label ou arealabeledby ou area-label; Ex: <label for =\"nom1\">Nom de famille</label>; <input id = \"nom1\" type=\"text\" name=\"nom\">. 2. Étiquette non affichée: placeholder avec un attribut aria-label ou aria-labelledby.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "3.2.3.1"
+                                    },
+                                    {
+                                        "critereDev": "Les etiquettes non visibles : placeholder avec un attribut aria-label ou aria-labelledby",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "3.2.3.2"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Ne pas masquer les etiquette label via CSS.",
+                                        "keyPratiqueDev": "3.2.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "Le recours à un attribut aria-describedby permet d'associer à l'étiquette label des informations complémentaires telles qu'une aide à la saisie (indication du format de saisie par exemple).",
+                                        "keyPratiqueDev": "3.2.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "3.3 Saisie et contrôles",
+                        "keySousRubriques": "3.3",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "La saisie doit être facilitée.",
+                                "keyFeuilleDeRouteUX": "3.3.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Le comportement d'autocomplete est défini parmi les valeurs possibles.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "3.3.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Les champs dont la saisie est obligatoire sont identifiables.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "3.3.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Les erreurs sont détectées à la validation, et non pas durant la saisie.",
+                                        "keyPratiqueUX": "3.3.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les messages d'erreurs ne doivent pas disparaître automatiquement, mais après une action de l'utilisateur (renvoi du formulaire par exemple).",
+                                        "keyPratiqueUX": "3.3.1.2"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "La saisie doit être facilitée.",
+                                "keyFeuilleDeRouteFonc": "3.3.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les indications du type de données ou de format obligatoires sont affichés dans des messages d'erreur.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "3.3.2.1"
+                                    },
+                                    {
+                                        "critereFonc": "Si le formulaire manipule un type de données parmi les suivantes : réponses à un test ou examen, données financières, juridiques, alors les données saisies doivent pouvoir être modifiées, mises-à-jour ou récupérées par l’utilisateur après envoi, ou à défaut, présenter un mécanisme de confirmation explicite.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "3.3.2.2"
+                                    },
+                                    {
+                                        "critereFonc": "Le comportement lié au retour arrière pour les formulaires modifiant les données est spécifié.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "3.3.2.3"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Si l’ensemble des champs d’un formulaire sont obligatoires, alors la seule légende « Tous les champs sont obligatoires. » placée au début du formulaire peut suffire.",
+                                        "keyPratiqueFonc": "3.3.2.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "La saisie doit être facilitée.",
+                                "keyFeuilleDeRouteDev": "3.3.3",
+                                "criteresDevList": [],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/autocomplete",
+                                        "keyPratiqueDev": "3.3.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "titre": "4. Textes et liens",
+                "keyRubriques": "4",
+                "sousRubriques": [
+                    {
+                        "titre": "4.1 Tableaux",
+                        "keySousRubriques": "4.1",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Les titres des tableaux de données doivent être rattachés au tableau",
+                                "keyFeuilleDeRouteUX": "4.1.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Les tableaux de données ont un titre",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "4.1.1.1"
+                                    }
+                                ],
+                                "pratiquesUXList": []
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Lorsqu'un tableau de données contient des en-têtes qui ne sont pas répartis uniquement sur la première ligne et/ou la première colonne de la grille ou dont la portée n'est pas valable pour l'ensemble de la colonne ou de la ligne, on parle de tableau de données complexe.Il est alors nécessaire de fournir un « résumé » permettant d'en expliquer sa nature et sa structure afin d'en faciliter la consultation pour des utilisateurs de technologies d'assistance par exemple.",
+                                "keyFeuilleDeRouteFonc": "4.1.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les tableaux complexes sont identifiés et leurs résumés sont définis",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "4.1.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Un résumé d'un tableau complexe doit donner le titre du tableau et présenter sa structure (comment sont répartis les en-têtes ou les données).",
+                                        "keyPratiqueFonc": "4.1.2.2"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Un résumé d'un tableau complexe idéalement est toujours visible.",
+                                        "keyPratiqueFonc": "4.1.2.3"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Une page vocalisée est lue de manière linéaire. Il ne faut pas que la linéarisation des tableaux de mise en page vienne casser le sens du contenu.",
+                                "keyFeuilleDeRouteDev": "4.1.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Pour chaque tableau de mise en forme, le contenu linéarisé reste compréhensible ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.1.3.1"
+                                    },
+                                    {
+                                        "critereDev": "Regrouper dans une même cellule td les informations qui doivent être verticalement associées (ne pas les répartir dans des cellules placées dans des lignes successives du tableau). ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.1.3.2"
+                                    },
+                                    {
+                                        "critereDev": "Utiliser l'élément HTML caption pour chaque tableau de données",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.1.3.3"
+                                    },
+                                    {
+                                        "critereDev": "1. Utiliser l'élément HTML th et son attribut scope pour baliser les cellules d'en-têtes et expliciter leur portée (scope de valeur col pour un en-tête de colonne, de valeur row pour un en-tête de ligne).",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.1.3.4"
+                                    },
+                                    {
+                                        "critereDev": "2. Pour les en-têtes qui ne s'appliquent qu'à une partie d'une ligne ou d'une colonne, contrôler la présence systématique de l'attribut id pour l'élément th et de l'attribut headers pour les éléments td.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.1.3.5"
+                                    },
+                                    {
+                                        "critereDev": "3. Utiliser l'attribut headers dans chaque cellule (élément td) pour indiquer les en-têtes associés",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.1.3.6"
+                                    },
+                                    {
+                                        "critereDev": "4. Regrouper dans une même cellule td les informations qui doivent être verticalement associées (ne pas les répartir dans des cellules placées dans des lignes successuves du tableau).",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.1.3.7"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Note : en HTML5, la seule technique utilisable actuellement est celle qui consiste à insérer le résumé directement dans le titre (balise <caption>) en masquant le résumé via CSS si nécessaire (vérifier le cas échéant qu'il est bien lu par les lecteurs d'écran).Dans les versions précédentes de HTML, le résumé peut être inséré via un attribut summary sur la balise <table>.",
+                                        "keyPratiqueDev": "4.1.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "Dans le cas d'une balise avec l'attribut WAI-ARIA role=\"table\", le résumé doit être fourni au moyen d'un attribut aria-describedby et être correctement restitué par les technologies d'assistance.",
+                                        "keyPratiqueDev": "4.1.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "4.2 Couleur non discriminante",
+                        "keySousRubriques": "4.2",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Dans chaque page web, l'information doit être visible et donc respecter un contraste minimum.",
+                                "keyFeuilleDeRouteUX": "4.2.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Le contraste entre la couleur du texte et l'arrière-plan respecte le niveau requis.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "4.2.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Le contraste entre la couleur des éléments d'interface (onglets, boutons, champs de formulaire, icônes et pictogrammes) respecte le niveau requis.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "4.2.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "le ratio de contraste minimal est de 3:1 entre le texte et son arrière-plan pour les textes de grande taille (plus de 24px) ou en gras.",
+                                        "keyPratiqueUX": "4.2.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "le ratio de contraste minimal est de 3 entre les éléments graphiques et la couleur d'arrière-plan.",
+                                        "keyPratiqueUX": "4.2.1.2"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Dans chaque page web, l'information ne doit pas être donnée uniquement par la couleur",
+                                "keyFeuilleDeRouteFonc": "4.2.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les informations ne sont pas portées uniquement par la couleur.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "4.2.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Si on supprime la couleur, l'information est compréhensible au même niveau qu'avec la couleur. ",
+                                        "keyPratiqueFonc": "4.2.2.1"
+                                    },
+                                    {
+                                        "pratiqueFonc": "L'ajout d'une icône peut dans certains cas pour compléter l'information véhiculée uniquement par de la couleur (ex: statut dans une colonne de tableau).",
+                                        "keyPratiqueFonc": "4.2.2.2"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Cette règle s'applique également aux éléments de navigation qui indiqueraient un statut par une couleur de fond différente.",
+                                        "keyPratiqueFonc": "4.2.2.3"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": []
+                    },
+                    {
+                        "titre": "4.3 Lisibilité des liens et textes",
+                        "keySousRubriques": "4.3",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Les titres, textes et liens doivent toujours apparaître clairement et être explicites.",
+                                "keyFeuilleDeRouteUX": "4.3.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Chaque page web a un titre de page.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "4.3.1.1"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "le titre d'une page est essentiel à l'accessibilité pour les personnes malvoyantes : il est le premier élément lu par les lecteurs d'écran.",
+                                        "keyPratiqueUX": "4.3.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les changements de sens de lecture sont signalés (ex : lecture en langue arabe)",
+                                        "keyPratiqueUX": "4.3.1.2"
+                                    }
+                                ]
+                            }
+                            
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Les titres, textes et liens doivent toujours apparaître clairement et être explicites.",
+                                "keyFeuilleDeRouteFonc": "4.3.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les titres de pages sont pertinents : précis, concis et uniques.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "4.3.2.1"
+                                    },
+                                    {
+                                        "critereFonc": "Un lien a toujours un libellé (l'URL n'est pas toujours explicite), et cet intitulé doit être clair (ex : ne pas créer de lien \"Cliquer ici\" ou \"Lire la suite\"). ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "4.3.2.2"
+                                    },
+                                    {
+                                        "critereFonc": "L' intitulé du lien est clair (ex : ne pas créer de lien \"Cliquer ici\" ou \"Lire la suite\"). ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "4.3.2.3"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Il est recommandé que le titre d'une page reprenne le nom de la page et le nom du site. Format conseillé : [Nom de la page courante] - [Nom du site].",
+                                        "keyPratiqueFonc": "4.3.2.1"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Cet ordre PAGE - SITE est intéressant dans le cas d'ouverture de plusieurs onglets : l'information principale (le nom de la page) est affichée en premier.",
+                                        "keyPratiqueFonc": "4.3.2.2"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Le tiret en tant que séparateur peut être utilisé pour séparer le nom de la page du nom du site dans le titre, ou le pipe, ou encore la virgule.",
+                                        "keyPratiqueFonc": "4.3.2.3"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Les titres, textes et liens doivent toujours apparaître clairement et être explicites.",
+                                "keyFeuilleDeRouteDev": "4.3.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Le titre de chaque page est défini par le renseignement du contenu de la balise title.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "4.3.3.1"
+                                    }
+
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "1. Pour chaque lien texte, image, élément ayant l'attribut WAI-ARIA role= \"img\", un élément <area> possédant un attribut href, un élément <object>, un élément <canvas> ou un élément <svg>, donner un libellé textuel",
+                                        "keyPratiqueDev": "4.3.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "1. Donner à chaque lien un libellé textuel entre les balises ouvrantes et fermantes de l'élément a, ou via l'alternative textuelle d'un élément img ou object. 2. Ne pas masquer à l'affichage le libellé textuel de l'élément a",
+                                        "keyPratiqueDev": "4.3.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "titre": "5. Navigation",
+                "keyRubriques": "5",
+                "sousRubriques": [
+                    {
+                        "titre": "5.1 Clavier",
+                        "keySousRubriques": "5.1",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Dans chaque page web, l'ordre de tabulation est cohérent ",
+                                "keyFeuilleDeRouteUX": "5.1.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "La navigation au clavier est réalisée dans un ordre logique pour l'utilisateur.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "5.1.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Toutes les fonctionnalités de la page sont accessibles et utilisables au clavier. ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "5.1.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Pour la navigation au clavier, les touches utilisées peuvent être : Dans le cas de composants simples, ou pages de contenu ou formulaires : Touches Tab pour le déplacement et Entrée pour l'activation. Dans le cas de composants complexes : Touches de flèches se déplacer, la barre d'espace pour activer, la touche Echap pour annuler.",
+                                        "keyPratiqueUX": "5.1.1.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Contenus additionnels",
+                                "keyFeuilleDeRouteFonc": "5.1.2",
+                                "criteresFoncList": [],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "les contenus additionnels apparaissant au survol, à la prise de focus ou à l'activation d'un composant d'interface sont si nécessaire atteignables au clavier ",
+                                        "keyPratiqueFonc": "5.1.2.1"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Dans chaque page web, les raccourcis clavier n'utilisant qu'une seule touche (lettre minuscule ou majuscule, ponctuation, chiffre ou symbole) sont contrôlables par l'utilisateur ",
+                                        "keyPratiqueFonc": "5.1.2.2"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Dans chaque page web, l'ordre de tabulation est cohérent",
+                                "keyFeuilleDeRouteDev": "5.1.3",
+                                "criteresDevList": [],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "L'effet visuel de prise de focus qui indique l'élément atteint lors de la navigation au clavier ne doit pas être masqué ou supprimé.",
+                                        "keyPratiqueDev": "5.1.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "Ne pas annuler la valeur par défaut de la propriété CSS outline sans la remplacer par une autre valeur",
+                                        "keyPratiqueDev": "5.1.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "5.2 Liens d'évitement",
+                        "keySousRubriques": "5.2",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Les liens d'évitement permettent respectivement d'éviter des sections de la page et d'accéder plus rapidement à des zones de contenu. Ils limient l'usage de touches clavier pour les utilisateurs se servant de ce mode de navigation.",
+                                "keyFeuilleDeRouteUX": "5.2.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Les zones suivantes peuvent être atteintes par le biais d'un lien d'accès rapide visible à la prise de focus lors d'une tabulation : zone d'en-tête, navigation principale, contenu principal, pied de page et moteur de recherche.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "5.2.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Les régions qui nécéssitent un usage fréquent de touches de navigation clavier pour être parcourues peuvent être contournées via un lien d'évitement.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "5.2.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Des liens de navigation internes à une page peuvent compléter les liens d'accès rapide et liens d'évitement (exemple : « Retour en haut de page »)",
+                                        "keyPratiqueUX": "5.2.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les liens d'accès rapide sont rassemblés en haut de page et visibles à la prise de focus à la première tablulation de la page.",
+                                        "keyPratiqueUX": "5.2.1.2"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les liens d'évitement sont positionnés avant la région qu’ils permettent d'éviter.",
+                                        "keyPratiqueUX": "5.2.1.3"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les liens d'évitement concernent : les pages avec beaucoup de contenus, ou les pages contenant beaucoup de liens, ou les pages découpées en plusieurs parties.",
+                                        "keyPratiqueUX": "5.2.1.4"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Visibilité des liens d'évitement et accès rapide.",
+                                "keyFeuilleDeRouteFonc": "5.2.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "le comportement de visibilité des liens d'évitement est défini (visible par défaut ou non).",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "5.2.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Si les liens d’évitement ne sont pas rendus visibles à l’écran par défaut, ils doivent toujours être interprétés par les outils d’assistance.",
+                                        "keyPratiqueFonc": "5.2.2.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Visibilité des liens d'évitement et accès rapide.",
+                                "keyFeuilleDeRouteDev": "5.2.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Les liens d'évitement sont toujours interprétés par les outils d'assistance quelque soit leur visibilité par défaut.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "5.2.3.1"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Les classes visually-hidden et visually-hidden-focusable peuvent permettre de vocaliser les liens via un lecteur d'écran.",
+                                        "keyPratiqueDev": "5.2.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "titre": "6. Médias et scripts",
+                "keyRubriques": "6",
+                "sousRubriques": [
+                    {
+                        "titre": "6.1 Audiodescription",
+                        "keySousRubriques": "6.1",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "Permet de fournir une transcription à des utilisateurs ne pouvant accéder au son ou à l'image proposés",
+                                "keyFeuilleDeRouteUX": "6.1.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Pour les médias à des fins non décoratives, un passage de texte (un titre ou un paragraphe, par exemple) qui précède ou suit immédiatement le média temporel, permet de l'identifier",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "6.1.1.1"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "La transcription peut figurer dans la page où se trouve le contenu vidéo ou audio ou être immédiatement accessible par un lien présent dans la page où se trouve le contenu vidéo ou audio",
+                                        "keyPratiqueUX": "6.1.1.1"
+                                    },
+                                    {
+                                        "pratiqueUX": "Les composants doivent être activables par un pointeur ou la touche tabulation. Dans le cas de boutons coulissant ou rotatif, il n'est pas possible de contrôler le composant par la touche d'entrée, mais les touches de direction peuvent être utilisées.",
+                                        "keyPratiqueUX": "6.1.1.2"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "Permet de fournir une transcription à des utilisateurs ne pouvant accéder au son ou à l'image proposés",
+                                "keyFeuilleDeRouteFonc": "6.1.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Chaque média temporel pré-enregistré a une transcription textuelle ou une audiodescription ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "6.1.2.1"
+                                    },
+                                    {
+                                        "critereFonc": "Un média non temporel a une alternative. 1. Pour chaque média non temporel, on trouve un lien (ou bouton) adjacent permettant d'accéder à une alternative, répondant à une de ces conditions : 1. La page référencée par le lien ou bouton adjacent est accessible. 2. L'alternative dans la page, référencée par le lien ou bouton adjacent, est accessible. 3. L'alternative est pertinente ou permet d'accéder au même contenu et à des fonctionnalités similaires",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "6.1.2.2"
+                                    }
+                                ],
+                                "pratiquesFoncList": [
+                                    {
+                                        "pratiqueFonc": "Transcription textuelle pouvant être intégrale(contenant les paroles et une description des sons et éméments visuels nécéssaires à la compréhension) ou synthétique (mais reflétant la totalité de l'information)",
+                                        "keyPratiqueFonc": "6.1.2.1"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Les vidéos doivent être déclenchées par l'utilisateur",
+                                        "keyPratiqueFonc": "6.1.2.2"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Les sons sont déclenchés par l'utilisateur.",
+                                        "keyPratiqueFonc": "6.1.2.3"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Si l'animation visuelle dure plus de 5 secondes ou un son plus de 3 secondes, l'utilisateur doit avoir la possibilité de stopper l'animation, le son ou le clignotement. ",
+                                        "keyPratiqueFonc": "6.1.2.4"
+                                    },
+                                    {
+                                        "pratiqueFonc": "Le déroulement des animations ne bloque pas la navigation ou l'accès aux contenus. ",
+                                        "keyPratiqueFonc": "6.1.2.5"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Permet de fournir une transcription à des utilisateurs ne pouvant accéder au son ou à l'image proposés",
+                                "keyFeuilleDeRouteDev": "6.1.3",
+                                "criteresDevList": [],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Ne pas incorporer dans la page d'éléments déclenchant la lecture d'une vidéo ou de son non contrôlable (ex : élément HTML vidéo, ou audio doté tde l'attribut autoplay ou sans l'attribut controls)",
+                                        "keyPratiqueDev": "6.1.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "6.2 Scripts",
+                        "keySousRubriques": "6.2",
+                        "sousRubriqueUx": [
+                            {
+                                "titre": "La thématique des scripts concerne les composants riches utilisant JavaScript (ex : calendrier de saisie, modales, etc...).",
+                                "keyFeuilleDeRouteUX": "6.2.1",
+                                "criteresUXList": [
+                                    {
+                                        "critereUX": "Les changements de contextes sont notifiés à l'utilisateur ou résultent d'une action explicite de sa part.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "6.2.1.1"
+                                    },
+                                    {
+                                        "critereUX": "Spécifier pour les composants d'interface : 1. Le composant possède un nom pertinent. 2. Le nom accessible du composant contient au moins l'intitulé visible. 3. Le composant possède un rôle pertinent.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereUX": "6.2.1.2"
+                                    }
+                                ],
+                                "pratiquesUXList": [
+                                    {
+                                        "pratiqueUX": "Un changement de contexte est changement dans la page risquant d'être ignoré ou incompris par un utilisateur qui ne peut pas voir la page dans sa globalité. Par exemple, un panier rempli qui n'est pas notifié.",
+                                        "keyPratiqueUX": "6.2.1.1"
+                                    }
+                                ]
+                            }
+                        ],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "La thématique des scripts concerne les composants riches utilisant JavaScript (ex : calendrier de saisie, modales, etc...).",
+                                "keyFeuilleDeRouteFonc": "6.2.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "Les messages de statuts sont identifiés",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "6.2.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": []
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "La thématique des scripts concerne les composants riches utilisant JavaScript (ex : calendrier de saisie, modales, etc...).",
+                                "keyFeuilleDeRouteDev": "6.2.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Les messages de statuts sont identifiés (cf. Bonnes pratiques)",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "6.2.3.1"
+                                    },
+                                    {
+                                        "critereDev": "Une de ces conditions est définie : 1. Le nom, le rôle, la valeur, le paramétrage et les changements d'états sont accessibles aux technologies d'assistance via une API d'accessibilité. 2. Un composant d'interface accessible permettant d'accéder aux mêmes fonctionnalités est présent dans la page",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "6.2.3.2"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "Chaque message de statut qui informe de la réussite, du résultat d'une action ou bien de l'état d'une application doit utiliser l'attribut WAI-ARIA role=\"status\" ",
+                                        "keyPratiqueDev": "6.2.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "Chaque message de statut qui présente une suggestion, ou avertit de l'existence d'une erreur doit utiliser l'attribut WAI-ARIA role=\"alert\" ",
+                                        "keyPratiqueDev": "6.2.3.2"
+                                    },
+                                    {
+                                        "pratiqueDev": "Chaque message de statut qui indique la progression d'un processus doit utiliser l'un des attributs WAI-ARIA role=\"log\", role=\"progressbar\" ou role=\"status\" ",
+                                        "keyPratiqueDev": "6.2.3.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "titre": "7. Identification technique",
+                "keyRubriques": "7",
+                "sousRubriques": [
+                    {
+                        "titre": "7.1 Balises",
+                        "keySousRubriques": "7.1",
+                        "sousRubriqueUx": [],
+                        "sousRubriqueFonctionnelle": [],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "La bonne utilisation de balises est essentielle pour les lecteurs d'écran.",
+                                "keyFeuilleDeRouteDev": "7.1.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "les balises ne sont pas utilisées uniquement à des fins de présentation.",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.1.3.1"
+                                    }
+                                ],
+                                "pratiquesDevList": [
+                                    {
+                                        "pratiqueDev": "1. Dans chaque page web les balises (à l'exception de div, span et table) ne doivent pas être utilisées uniquement à des fins de présentation.",
+                                        "keyPratiqueDev": "7.1.3.1"
+                                    },
+                                    {
+                                        "pratiqueDev": "2. Dans chaque page web, les balises servant à la présentation de l'information ne doivent pas être présentes dans le code source des pages.",
+                                        "keyPratiqueDev": "7.1.3.2"
+                                    },
+                                    {
+                                        "pratiqueDev": "3. Dans chaque page Web, les attributs servant à la présentation de l'information ne doivent pas être présents dans le code source des pages.",
+                                        "keyPratiqueDev": "7.1.3.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "7.2 Doctype",
+                        "keySousRubriques": "7.2",
+                        "sousRubriqueUx": [],
+                        "sousRubriqueFonctionnelle": [],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "Le doctype indique au navigateur de quel type de document il s'agit. Il est nécéssaire pour l'interprétation de la page les lecteurs d'écran.",
+                                "keyFeuilleDeRouteDev": "7.2.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "Pour chaque page web, le type de document (balise doctype) est présent ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.2.3.1"
+                                    },
+                                    {
+                                        "critereDev": "Pour chaque page web, le type de document (balise doctype) est valide ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.2.3.2"
+                                    },
+                                    {
+                                        "critereDev": "Pour chaque page web possédant une déclaration de type de document, celle-ci est située avant la balise <html> dans le code source ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.2.3.3"
+                                    },
+                                    {
+                                        "critereDev": "Pour chaque page web, le code source généré est valide selon le type de document spécifié (hors cas particuliers) ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.2.3.4"
+                                    }
+                                ],
+                                "pratiquesDevList": []
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "7.3 Langue",
+                        "keySousRubriques": "7.3",
+                        "sousRubriqueUx": [],
+                        "sousRubriqueFonctionnelle": [
+                            {
+                                "titre": "L'identification de la langue est importante pour les lecteurs d'écran notamment. ",
+                                "keyFeuilleDeRouteFonc": "7.3.2",
+                                "criteresFoncList": [
+                                    {
+                                        "critereFonc": "La langue par défaut est précisée",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereFonc": "7.3.2.1"
+                                    }
+                                ],
+                                "pratiquesFoncList": []
+                            }
+                        ],
+                        "sousRubriqueDeveloppement": [
+                            {
+                                "titre": "L'identification de la langue est importante pour les lecteurs d'écran notamment.",
+                                "keyFeuilleDeRouteDev": "7.3.3",
+                                "criteresDevList": [
+                                    {
+                                        "critereDev": "L'attribut lang de l'élément racine html est renseigné.Ex : <html lang=\"fr\"> ",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.3.3.1"
+                                    },
+                                    {
+                                        "critereDev": "Si le contenu dont la lague diffère n'est pas déjà balisé par un élément de la structure HTML existante, il est nécéssaire d'ajouter un élément spécifique (div ou span) pour en spécifier la languer (sauf pour title qui ne peut comporter de balisage interne)",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.3.3.2"
+                                    },
+                                    {
+                                        "critereDev": " L'indication de la langue de la page (attribut lang et/ou xml:lang) est donnée sur chaque élément de texte ou sur l'un des éléments parents.(même pratique à utiliser pour les textes dans une langue spécifique)",
+                                        "refRGAA": "Non défini",
+                                        "keyCritereDev": "7.3.3.3"
+                                    }
+                                ],
+                                "pratiquesDevList": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

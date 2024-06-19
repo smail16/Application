@@ -1,0 +1,198 @@
+{
+    "AppLogin": {
+        "login": "Login"
+    },
+    "AppFooter": {
+        "motto": "The world is how we shape it",
+        "rights": "Sopra Steria 2023©",
+        "followUsTwitter": "Follow us on twitter",
+        "followUsInstagram": "Follow us on Instagram",
+        "followUsFacebook": "Follow us on Facebook",
+        "followUsYoutube": "Follow us on Youtube",
+        "followUsLinkedIn": "Follow us on Linkedin",
+        "twitterLabel": "Twitter link",
+        "instagramLabel": "Instagram link",
+        "facebookLabel": "Facebook link",
+        "youtubeLabel": "Youtube link",
+        "linkedInLabel": "LinkedIn link"
+    },
+    "LoggedInDemo": {
+        "Name": "John Doe"
+    },
+    "AppHeader": {
+        "titre": "OSCA",
+        "soustitre": "Outil de Suivi de Conception d'Accessibilité"
+    },
+    "AppMenu": {
+        "Accueil": "Home",
+        "Nouveau": "New project",
+        "MesProjets": "My projects"
+    },
+    "AppMenuProject": {
+        "Accueil": "Home",
+        "Nouveau": "New page",
+        "Add": "Add new page",
+        "Delete": "Delete"
+    },
+    "MyProjects": {
+        "projet": "My projects",
+        "create": "Create a project",
+        "NomProjet": "Name of the project",
+        "CreationDate": "Creation date",
+        "dernieremodification": "Date of last modification",
+        "stats": "advancement",
+        "role": "Role",
+        "actions": "Actions"
+    },
+    "AppDeleteProjectDialog": {
+        "header": "Delete the project",
+        "dialogue": "Do you want to permanently delete the project?",
+        "cancelButton": "Cancel",
+        "DeleteButton": "Delete"
+    },
+    "DialogueDeletePage": {
+        "header": "Delete the page",
+        "dialogue": "Do you want to permanently delete the page : "
+    },
+    "CreateProject": {
+        "create": "Create a project",
+        "NewProject": "Complete this form to create a new project where you can monitor the progress of RGAA compliance in real time with your team",
+        "NomProjet": "Name of the project",
+        "AddMembers": "Add members to the project",
+        "email": "e-mail adress",
+        "role": "Role",
+        "add": "Add",
+        "end": "Finish",
+        "ProjectNameLabel": "Project Name",
+        "ProjectName": "Please enter your project name",
+        "ProjectMailLabel": "Email-address",
+        "ProjectMail": "Please enter a valid email address",
+        "ProjecSelectedRole": "Select a role",
+        "ProjectRole": "Please choose a role from the available options",
+        "ProjectAdd": "Please choose a role from the available options",
+        "NameRequired": "The project name is required.",
+        "EmailRequired": "An email is required",
+        "InvalidEmail": "Email must be valid",
+        "NomTropLong": "Invalid project title. Your project title must be less than 50 characters",
+        "NameNotUnique": "This title is already used"
+    },
+    "HomePage": {
+        "main": "The collaborative tool allowing different stakeholders to monitor compliance with RGAA criteria on a project",
+        "createproject": "Create a project",
+        "commentcamarche": "How does it work",
+        "createIcone": "Create a project and join the next parties",
+        "conforme": "Enter the compliance status",
+        "rapport": "Generate the compliance report",
+        "titre": "OSCA"
+    },
+    "LayoutNavigation": {
+        "titreprojet": "Project GOLDE",
+        "avancement": "Overall progress"
+    },
+    "AppMaquette": {
+        "header": "Annotated model",
+        "chooseLabel": "Add a model",
+        "toastUpload": "Model saved successfully",
+        "toastDownload": "Model downloaded successfully",
+        "toastDelete": "Model deleted successfully",
+        "toastSizeFile": "The selected file exceeds the maximum allowed size."
+    },
+    "AppMaquetteDelete": {
+        "header": "Deleting the model",
+        "dialogue": "Would you like to remove this model from the subsection? Please note, this deletion is permanent.",
+        "cancelButton": "Cancel",
+        "DeleteButton": "Delete"
+    },
+    "AppRubrique": {
+        "image": "1. Images",
+        "deco": "1.1 Relevant or decorative images",
+        "captcha": "1.2 Captcha",
+        "information": "2. Presentation of informations",
+        "forms": "3. Forms",
+        "text": "4. Texts and links",
+        "navigation": "5. Browsing",
+        "other": "6. Other elements",
+        "titre": "Rubriques"
+    },
+    "AppUpload": {
+        "telecharger": "Drag and drop the annotated model here to upload it",
+        "taille": "Maximum size: 1 Mo",
+        "format": "Supported format: jpg, png"
+    },
+    "ImageDescription": {
+        "header": "Guidelines",
+        "soustitre": "Each image carrying information has a textual alternative. On the opposite, an image should not be described if it does not provide information"
+    },
+    "ImageTabMenu": {
+        "UXRoadMap": "UX roadmap",
+        "DevelopRoadMap": "Developping roadmap",
+        "FunctionRoadMap": "Functionnal roadmap"
+    },
+    "UXRoadMap": {
+        "check": "Please check the box once the instruction is verified"
+    },
+    "UXCheckBoxList": {
+        "un": "The alternatives for relevant images are defined (on the model or in the comments block)",
+        "deux": "Image captions, if they exist, are defined",
+        "trois": "Descriptions of complex images are defined"
+    },
+    "UXGoodPractice": {
+        "header": "UX good pratices",
+        "texte": "The description of the image itself will not provide relevant information",
+        "deux": "A thumbnail representing the cover of a document to be downloaded will not need to be described: the title of the document, the format and the size of the file will be sufficient."
+    },
+    "UXComments": {
+        "header": "Comments"
+    },
+    "DevelopCheckBoxList": {
+        "un": "Relevant image alternatives are associated with their images",
+        "deux": "Image captions, if they exist, are defineds",
+        "trois": "Descriptions of complex images are defined"
+    },
+    "DevelopComments": {
+        "header": "Comments"
+    },
+    "DevelopGoodPractice": {
+        "header": "Develop good pratices",
+        "texte": "Each text image carrying information, in the absence of a replacement mechanism, must if possible be replaced by stylish text: Use HTML texts, formatted using CSS styles.",
+        "deux": "Give each img image, decorative area an empty alt attribute",
+        "trois": "Leave the contents of the objects and canvas elements empty: <object></object> <canvas></canvas>",
+        "quatre": "The adjacent caption is contained in a tag"
+    },
+    "FuncCheckBoxList": {
+        "un": "The texts (alternatives, captions, descriptions) are defined in a relevant manner",
+        "deux": "Relevant images carry a detailed description if necessary",
+        "trois": "Descriptions of complex images are defined",
+        "quatre": "Image captions, if they exist, are defineds"
+    },
+    "FuncComments": {
+        "header": "Comments"
+    },
+    "FuncGoodPractice": {
+        "header": "Functionnal good pratices",
+        "texte": "Expected replacement texts NB: an alt type alternative must remain concise (120 characters maximum)",
+        "deux": "An image has no point in being described if it does not provide information"
+    },
+    "ButtonProjectList": {
+        "DeleteButton": "Delete project",
+        "DeleteLabel": "Delete project",
+        "ModifyButton": "Edit project",
+        "ModifyLabel": "Edit project",
+        "ShareButton": "Share project",
+        "ShareLabel": "Share project",
+        "ExportButton": "Export project",
+        "ExportLabel": "Export project"
+    },
+    "DashBoard": {
+        "Message": "Your project has been created"
+    },
+    "ListProjectErrors": {
+        "fetchError": "Error retrieving projects"
+    },
+    "DialogueOngletCreation": {
+        "label": "Title:"
+    },
+    "ProjectPage": {
+        "projetactif": "No active project"
+    }
+}

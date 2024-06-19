@@ -1,0 +1,19 @@
+<div class="card flex justify-content-center">
+    <DialogPrime
+        :visible="visible"
+        @update:visible="updateVisible"
+        :header="t('Ajout d\'une nouvelle page')"
+        :style="{ width: '50vw' }"
+        class="dialog"
+    >
+        <div>
+            <label for="nouvelOngletTitle">{{ t('DialogueOngletCreation.label') }}</label>
+            <InputText type="text" v-model="nouvelOngletTitle" id="nouvelOngletTitle" class="titreonglet" :size="small" />
+            <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </div>
+        <template #footer>
+            <ButtonPrime class="custom-button-annuler" :label="t('Annuler')" icon="pi pi-times" @click="closeDialog" />
+            <ButtonPrime class="custom-button-valider" :label="t('Valider')" icon="pi pi-check" @click="validerModification" />
+        </template>
+    </DialogPrime>
+</div>

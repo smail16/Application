@@ -1,0 +1,4 @@
+.custom-button-annuler,
+.custom-button-supprimer {
+    @include custom-button-dialog-styles;
+}

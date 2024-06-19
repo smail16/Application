@@ -1,0 +1,109 @@
+{{- if .Values.oauth2Proxy.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "application.fullname" . }}
+  labels:
+    {{- include "application.labels" $ | nindent 4 }}
+  annotations:
+data:
+  oauth2_proxy.cfg: |
+    cookie_secret="{{ randAlphaNum 32 }}"
+    email_domains="*"
+    skip_provider_button={{ .Values.oauth2Proxy.skipProviderButton | default false }}
+    {{- if .Values.oauth2Proxy.skipAuthRoutes }}
+    skip_auth_routes=["{{ join "\",\"" .Values.oauth2Proxy.skipAuthRoutes }}"]
+    {{- end }}
+  oauth2_proxy.yml: |
+    upstreamConfig:
+      upstreams:
+      {{- with (first .Values.routes) }}
+      - flushInterval: 1s
+        id: {{ .path }}
+        passHostHeader: true
+        path: {{ .path }}
+        proxyWebSockets: true
+        timeout: 30s
+        rewriteTarget: /
+        uri: http://localhost:{{ $.Values.containerPort }}
+      {{- end }}
+    server:
+      {{- if and (eq .Values.global.deploymentTarget "kubernetes") (eq .Values.oauth2Proxy.provider "azure") }}
+      BindAddress: 0.0.0.0:8443
+      {{- else if and (eq .Values.global.deploymentTarget "openshift") (eq .Values.oauth2Proxy.provider "azure") }}
+      BindAddress: ""
+      SecureBindAddress: :8443
+      TLS:
+        Cert:
+          fromFile: /etc/tls/private/tls.crt
+        CipherSuites: null
+        Key:
+          fromFile: /etc/tls/private/tls.key
+        MinVersion: ""
+      {{- else }}
+      BindAddress: 0.0.0.0:4180
+      SecureBindAddress: ""
+      TLS: null
+      {{- end }}
+    injectRequestHeaders:
+    - name: X-Forwarded-Groups
+      values:
+      - claim: groups
+    - name: X-Forwarded-User
+      values:
+      -   claim: user
+    - name: X-Forwarded-Email
+      values:
+      - claim: email
+    - name: X-Forwarded-Preferred-Username
+      values:
+      - claim: preferred_username
+    {{- if eq .Values.oauth2Proxy.provider "keycloak" }}
+    injectResponseHeaders:
+    - name: X-Auth-Request-User
+      values:
+      - claim: user
+    - name: X-Auth-Request-Email
+      values:
+      - claim: email
+    - name: X-Auth-Request-Preferred-Username
+      values:
+      - claim: preferred_username
+    - name: X-Auth-Request-Groups
+      values:
+      - claim: groups
+    {{- end }}
+    metricsServer:
+      BindAddress: ""
+      SecureBindAddress: ""
+      TLS: null
+    providers:
+    - provider: {{ .Values.oauth2Proxy.provider }}
+      clientSecret: {{ .Values.oauth2Proxy.clientSecret }}
+      clientID: {{ .Values.oauth2Proxy.clientId }}
+      id: {{ .Values.oauth2Proxy.provider }}={{ .Values.oauth2Proxy.clientId }}
+      {{- if eq .Values.oauth2Proxy.provider "keycloak" }}
+      scope: "openid profile email"
+      loginURL: {{ .Values.oauth2Proxy.issuerUrl }}/realms/{{ .Values.oauth2Proxy.realm }}/protocol/openid-connect/auth
+      redeemURL: {{ .Values.oauth2Proxy.issuerUrl }}/realms/{{ .Values.oauth2Proxy.realm }}/protocol/openid-connect/token
+      validateURL: {{ .Values.oauth2Proxy.issuerUrl }}/realms/{{ .Values.oauth2Proxy.realm }}/protocol/openid-connect/userinfo
+      {{- end }}
+      loginURLParameters:
+      - default:
+        - force
+      name: {{ .Values.oauth2Proxy.provider }}
+      oidcConfig:
+        audienceClaims:
+        - aud
+        emailClaim: email
+        groupsClaim: groups
+        insecureSkipNonce: true
+        {{- if eq .Values.oauth2Proxy.provider "azure" }}
+        issuerURL: https://login.microsoftonline.com/{{ .Values.oauth2Proxy.tenantId }}/v2.0
+        {{- else if eq .Values.oauth2Proxy.provider "gitlab" }}
+        issuerURL: {{ .Values.oauth2Proxy.issuerUrl }}
+        {{- else if eq .Values.oauth2Proxy.provider "keycloak" }}
+        issuerURL: {{ .Values.oauth2Proxy.issuerUrl }}/realms/{{ .Values.oauth2Proxy.realm }}
+        {{- end }}
+        userIDClaim: email
+{{- end }}

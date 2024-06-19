@@ -1,0 +1,34 @@
+{{- if eq .Values.global.deploymentTarget "openshift" }}
+{{- range $route := .Values.routes }}
+{{- if eq ($route.enabled | toString) "true" }}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ printf "%s-%s" (include "application.fullname" $) $route.name | trimSuffix "-" }}
+  labels:
+    {{- include "application.labels" $ | nindent 4 }}
+  annotations:
+    haproxy.router.openshift.io/rewrite-target: /
+spec:
+  host: {{ $route.host }}
+  {{- if $.Values.oauth2Proxy.enabled }}
+  path: /
+  {{- else }}
+  path: {{ $route.path }}
+  {{- end }}
+  port:
+    targetPort: web
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    {{- if and ($.Values.oauth2Proxy.enabled) (eq $.Values.oauth2Proxy.provider "azure") }}
+    termination: Reencrypt
+    {{- else }}
+    termination: edge
+    {{- end }}
+  to:
+    kind: Service
+    name: {{ include "application.fullname" $ }}
+{{- end }}
+{{- end }}
+{{- end }}

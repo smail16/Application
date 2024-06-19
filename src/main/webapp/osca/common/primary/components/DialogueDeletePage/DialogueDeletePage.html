@@ -1,0 +1,32 @@
+<div class="card flex justify-content-center">
+    <DialogPrime
+        :visible="visible"
+        @update:visible="UpdateVisible"
+        :header="t('DialogueDeletePage.header')"
+        :style="{ width: '50vw' }"
+        class="dialog"
+        modal
+        :pt="{
+      mask: {
+          style: 'backdrop-filter: blur(0.125rem)'
+      }
+  }"
+    >
+        <p>{{ t("DialogueDeletePage.dialogue") }} {{ active.label }}</p>
+        <template #footer>
+            <ButtonPrime
+                class="custom-button-annuler"
+                :label="t('AppDeleteProjectDialog.cancelButton')"
+                icon="pi pi-times"
+                @click="closeDialog"
+            />
+            <ButtonPrime
+                class="custom-button-supprimer"
+                :label="t('AppDeleteProjectDialog.DeleteButton')"
+                icon="pi pi-check"
+                @click="deleteQuery"
+                autofocus
+            />
+        </template>
+    </DialogPrime>
+</div>

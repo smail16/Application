@@ -1,0 +1,26 @@
+<div>
+    <div class="maquette-wrapper">
+        <MaquetteProjectVue
+            :activeProjectId="activeProjectId"
+            :sousRubriqueMaquetteList="sousRubriqueMaquetteList"
+            :titrePage="titrePage"    
+        />
+    </div>
+    <div class="critere-wrapper">
+        <CriteresVue
+            :criteresUXList="criteresUXList"
+            :pratiquesUXList="pratiquesUXList"
+            :sousRubriqueUxTitles="sousRubriqueUxTitles"
+            :criteresDevList="criteresDevList"
+            :pratiquesDevList="pratiquesDevList"
+            :sousRubriqueDevTitles="sousRubriqueDevTitles"
+            :criteresFonctionelsList="criteresFonctionelsList"
+            :pratiquesFonctionellesList="pratiquesFonctionellesList"
+            :sousRubriqueFonctionelleTitles="sousRubriqueFonctionelleTitles"
+            :updatedProgressFunc="updatedProgressFunc"
+            :updatedProgressDevelop="updatedProgressDevelop"
+            :updatedProgressUX="updatedProgressUX"
+            @critere-updated="handleUpdate"
+        />
+    </div>
+</div>

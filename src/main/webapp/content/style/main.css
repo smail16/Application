@@ -1,0 +1,8 @@
+.p-button {
+    background: #a60726;
+}
+.p-button:hover {
+    background-color: white;
+    color: black;
+    border: 0.1rem solid #a60726;
+}

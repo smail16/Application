@@ -1,0 +1,148 @@
+<Accordion :activeIndex="0">
+    <AccordionTab :header="t('ImageDescription.header')" class="accordion-images">
+        <div class="tab-view-image">
+            <TabView>
+                <TabPanel :header="`${t('ImageTabMenu.UXRoadMap')} : ${updatedProgressUX}%`">
+                    <p class="image-description-soustitre">{{ sousRubriqueUxTitles[0]}}</p>
+                    <p class="UX-checkbox-text">{{ t("UXRoadMap.check") }}</p>
+                    <div class="checkbox-list card flex justify-start">
+                        <div class="flex flex-wrap flex-column" v-if="criteresUXList.length > 0">
+                            <div v-for="critere of criteresUXList" :key="critere.key" class="flex gap-3 align-items-start lignecheckboxes">
+                                <div class="checkbox-container">
+                                    <TriStateCheckbox v-model="critere.state" @change="updateProgress(critere)" />
+                                    <label class="checkbox-label" :for="critere.key"><span class="checkbox-key">{{critere.key}}</span> {{critere.name}}</label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="good-practice">
+                        <Accordion>
+                            <AccordionTab>
+                                <template #header>
+                                    <div class="UX-good-practice header">
+                                        <i class="pi pi-fw pi-info-circle"></i>
+                                        <span>{{ t('UXGoodPractice.header') }}</span>
+                                    </div>
+                                </template>
+                                <ul>
+                                    <li v-for="bonnePratique in pratiquesUXList" :key="bonnePratique.key" class="UX-good-practice-text">
+                                        <p>{{bonnePratique.pratiqueUX}}</p>
+                                    </li>
+                                </ul>
+                            </AccordionTab>
+                        </Accordion>
+                    </div>
+                    <div class="comments">
+                        <Accordion>
+                            <AccordionTab>
+                                <template #header>
+                                    <div class="header">
+                                        <i class="pi pi-fw pi-comment"></i>
+                                        <span>{{ t('UXComments.header') }}</span>
+                                    </div>
+                                </template>
+                            </AccordionTab>
+                        </Accordion>
+                    </div>
+                </TabPanel>
+                <TabPanel :header="`${t('ImageTabMenu.FunctionRoadMap')} : ${updatedProgressFunc}%`">
+                    <p class="image-description-soustitre">{{ sousRubriqueFonctionelleTitles[0] }}</p>
+                    <p class="checkbox-text">{{ t("UXRoadMap.check") }}</p>
+                    <div class="checkbox-list card flex">
+                        <div class="flex flex-wrap flex-column" v-if="criteresFonctionelsList.length > 0">
+                            <div
+                                v-for="critere of criteresFonctionelsList"
+                                :key="critere.key"
+                                class="flex gap-3 align-items-start lignecheckboxes"
+                            >
+                                <div class="checkbox-container">
+                                    <TriStateCheckbox v-model="critere.state" @change="updateProgress(critere)" />
+                                    <label class="checkbox-label" :for="critere.key"><span class="checkbox-key">{{critere.key}}</span> {{critere.name}}</label>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="good-practice">
+                        <Accordion>
+                            <AccordionTab>
+                                <template #header>
+                                    <div class="develop-good-practice header">
+                                        <i class="pi pi-fw pi-info-circle"></i>
+                                        <span>{{ t('FuncGoodPractice.header') }}</span>
+                                    </div>
+                                </template>
+                                <ul>
+                                    <li
+                                        v-for="bonnePratique in pratiquesFonctionellesList"
+                                        :key="bonnePratique.key"
+                                        class="UX-good-practice-text"
+                                    >
+                                        <p>{{bonnePratique.pratiqueFonc}}</p>
+                                    </li>
+                                </ul>
+                            </AccordionTab>
+                        </Accordion>
+                    </div>
+                    <div class="comments">
+                        <Accordion>
+                            <AccordionTab>
+                                <template #header>
+                                    <div class="header">
+                                        <i class="pi pi-fw pi-comment"></i>
+                                        <span>{{ t('FuncComments.header') }}</span>
+                                    </div>
+                                </template>
+                            </AccordionTab>
+                        </Accordion>
+                    </div>
+                </TabPanel>
+                <TabPanel :header="`${t('ImageTabMenu.DevelopRoadMap')} : ${updatedProgressDevelop}%`">
+                    <p class="image-description-soustitre">{{ sousRubriqueDevTitles[0] }}</p>
+                    <p class="develop checkbox-text">{{ t("UXRoadMap.check") }}</p>
+                    <div class="checkbox-list card flex">
+                        <div class="flex flex-wrap flex-column" v-if="criteresDevList.length > 0">
+                            <div v-for="critere of criteresDevList" :key="critere.key" class="flex gap-3 align-items-start lignecheckboxes">
+                                <div class="checkbox-container">
+                                    <TriStateCheckbox v-model="critere.state" @change="updateProgress(critere)" />
+                                    <label class="checkbox-label" :for="critere.key"><span class="checkbox-key">{{critere.key}}</span> {{critere.name}}</label>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="good-practice">
+                        <Accordion>
+                            <AccordionTab>
+                                <template #header>
+                                    <div class="develop-good-practice header">
+                                        <i class="pi pi-fw pi-info-circle"></i>
+                                        <span>{{ t('DevelopGoodPractice.header') }}</span>
+                                    </div>
+                                </template>
+                                <ul>
+                                    <li v-for="bonnePratique in pratiquesDevList" :key="bonnePratique.key" class="UX-good-practice-text">
+                                        <p>{{bonnePratique.pratiqueDev}}</p>
+                                    </li>
+                                </ul>
+                            </AccordionTab>
+                        </Accordion>
+                    </div>
+                    <div class="comments">
+                        <Accordion>
+                            <AccordionTab>
+                                <template #header>
+                                    <div class="header">
+                                        <i class="pi pi-fw pi-comment"></i>
+                                        <span>{{ t('DevelopComments.header') }}</span>
+                                    </div>
+                                </template>
+                            </AccordionTab>
+                        </Accordion>
+                    </div>
+                </TabPanel>
+            </TabView>
+        </div>
+    </AccordionTab>
+</Accordion>

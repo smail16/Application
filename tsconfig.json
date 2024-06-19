@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "noImplicitAny": false,
+        "useDefineForClassFields": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "types": [
+            "vite/client",
+            "vitest/globals"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/main/webapp/osca/*"
+            ]
+        }
+    },
+    "include": [
+        "src/main/webapp/**/*.ts",
+        "src/main/webapp/**/*.d.ts",
+        "src/main/webapp/**/*.tsx",
+        "src/main/webapp/**/*.vue",
+        "src/main/webapp/**/__tests__/**/*.ts",
+        "src/main/webapp/osca/i18n/index.ts"
+    ],
+    "exclude": [
+        "./node_modules"
+    ]
+}

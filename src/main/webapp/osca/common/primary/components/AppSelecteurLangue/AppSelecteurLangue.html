@@ -1,0 +1,3 @@
+<Dropdown v-model="locale" :options="availableLocales" placeholder="Langue" id="dropdown-with-margin">
+    <option v-for="locale in availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+</Dropdown>

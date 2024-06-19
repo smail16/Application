@@ -1,0 +1,49 @@
+<div class="grid">
+    <div class="col-12">
+        <AppMenuVue class="col-11 col-md-10 mx-auto" />
+        <div class="col-11 col-md-10 mx-auto">
+            <div class="container">
+                <div class="content">
+                    <div class="titre">
+                        <h1>{{ t('HomePage.titre') }}</h1>
+                        <div>
+                            <p class="main">{{ t('HomePage.main') }}</p>
+                        </div>
+                        <router-link to="/CreateProject" class="routerlink">
+                            <ButtonPrime class="button-create" label="Large" size="large" id="createbutton" rounded>
+                                <span>{{ t('HomePage.createproject') }}</span>
+                            </ButtonPrime>
+                        </router-link>
+                    </div>
+                    <div class="projet">
+                        <img
+                            src="\content\images\projets.png"
+                            alt="image de décoration"
+                            id="imagedeco"
+                            role="presentation"
+                            class="HomePageImage"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="comment-ca-marche">
+                <h2>{{ t('HomePage.commentcamarche') }} ?</h2>
+                <div class="row">
+                    <div class="col">
+                        <i class="pi pi-qrcode custom-icon"></i>
+                        <span>{{ t('HomePage.createIcone') }}</span>
+                    </div>
+                    <div class="col">
+                        <i class="pi pi-pencil custom-icon"></i>
+                        <span>{{ t('HomePage.conforme') }}</span>
+                    </div>
+                    <div class="col">
+                        <i class="pi pi-file-export custom-icon"></i>
+                        <span>{{ t('HomePage.rapport') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</div>

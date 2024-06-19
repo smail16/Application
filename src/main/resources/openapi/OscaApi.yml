@@ -1,0 +1,763 @@
+openapi: 3.0.3
+info:
+  title: OSCA
+  version: '1.0.0'
+  description: "Outil de Suivi de Conception d'Accessibilité"
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/projects:
+    post:
+      tags:
+        - Projects
+      summary: Ajoute un nouveau projet
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectToCreate'
+      responses:
+        '201':
+          description: Un projet a été créé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectAPI'
+        '400':
+          description: Bad Request
+    get:
+      tags:
+        - Projects
+      summary: Trouve tous les projets existants
+      description: Récupère une liste de tous les projets
+      operationId: findAllProjects
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProjectAPI'
+        '400':
+          description: Bad Request
+  /api/projects/{identifiant}:
+    get:
+      tags:
+        - Projects
+      summary: Trouve un projet par identifiant
+      description: FindProjectByIdentifiant permettant de récupérer un projet par identifiant en base de données
+      operationId: findProjectByIdentifiant
+      parameters:
+        - name: identifiant
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectAPI'
+        '404':
+          description: Projet non trouvé
+    put:
+      tags:
+        - Projects
+      summary: Met à jour un projet existant
+      operationId: updateProject
+      parameters:
+        - name: identifiant
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectAPI'
+      responses:
+        '200':
+          description: Projet mis à jour avec succès
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectAPI'
+        '400':
+          description: Requête incorrecte
+        '404':
+          description: Projet non trouvé
+    delete:
+      tags:
+        - Projects
+      summary: Supprime un projet existant
+      operationId: deleteProject
+      parameters:
+        - name: identifiant
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Projet supprimé avec succès
+        '404':
+          description: Projet non trouvé
+  /api/projects/{identifiant}/export/csv:
+    get:
+      tags:
+        - Projects
+      summary: Exporte un projet spécifique au format CSV
+      operationId: exportProjectToCsv
+      parameters:
+        - name: identifiant
+          in: path
+          required: true
+          schema:
+            type: string
+          description: "Identifiant du projet à exporter."
+      responses:
+        '200':
+          description: Export du fichier CSV
+          content:
+            text/csv:
+              schema:
+                type: string
+        '404':
+          description: Projet non trouvé
+        '500':
+          description: Erreur interne du serveur
+  /api/referentiel/{version}:
+    get:
+      tags:
+        - Referentiels
+      summary: Récupère Referentiels by Version
+      operationId: findReferentielByVersion
+      parameters:
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Referentiel Trouvé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferentielAPI'
+        '400':
+          description: Bad Request
+  /api/projects/avancement/{identifiant}:
+    put:
+      tags:
+        - Projects
+      summary: Met à jour un l'avancement du projet existant
+      operationId: updateAvancement
+      parameters:
+        - name: identifiant
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: avancementGlobal
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Projet mis à jour avec succès
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectAPI'
+        '400':
+          description: Requête incorrecte
+        '404':
+          description: Projet non trouvé
+  /api/pages:
+    post:
+      tags:
+        - Pages
+      summary: Crée une nouvelle page
+      operationId: createPage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PageToCreate'
+      responses:
+        '200':
+          description: Une Page a été créé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageAPI'
+        '201':
+          description: La page a été créée
+        '400':
+          description: Requête incorrecte
+    put:
+      tags:
+        - Pages
+      summary: updatePage
+      operationId: updatePage
+      parameters:
+        - name: identifiant
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: titrePage
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: avancementGlobal
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: keySousRubrique
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: avancementUX
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: avancementDev
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: avancementFonc
+          in: query
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PageAPI'
+      responses:
+        '200':
+          description: Une Page a été update
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageAPI'
+    delete:
+      tags:
+        - Pages
+      summary: deletePage
+      operationId: deletePage
+      parameters:
+        - name: identifiant
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: titrePage
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Une Page a été supprimée
+          content:
+            application/json:
+              schema:
+                type: string
+  /api/maquette:
+    post:
+      tags:
+        - Maquettes
+      summary: Upload a Maquette
+      operationId: addMaquette
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                keySousRubrique:
+                  type: string
+                projectId:
+                  type: string
+                titrePage:
+                  type: string
+      responses:
+        '200':
+          description: Maquette uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaquetteAPI'
+  /api/maquettes/{projectId}:
+    get:
+      tags:
+        - Maquettes
+      summary: Récupérer les fichiers par ID de projet
+      operationId: getMaquetteByIdentifiantProjetAndKeySousRubriqueAndTitrePage
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: ID du projet
+          schema:
+            type: string
+        - name: keySousRubrique
+          in: query
+          required: true
+          description: key de la sous rubrique
+          schema:
+            type: string
+        - name: titrePage
+          in: query
+          required: true
+          description: titre de la page
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Fichiers téléchargés avec succès
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MaquetteAPI'
+  /api/maquette/{identifiant}:
+    get:
+      tags:
+        - Maquettes
+      summary: récupérer la maquette by ID
+      operationId: getMaquetteByIdentifiant
+      parameters:
+        - name: identifiant
+          in: path
+          required: true
+          description: ID of the file to download
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File downloaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaquetteAPI'
+    delete:
+      tags:
+        - Maquettes
+      summary: Delete a file by ID
+      operationId: deleteMaquette
+      parameters:
+        - name: identifiant
+          in: path
+          required: true
+          description: ID of the file to delete
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File deleted successfully
+        '404':
+          description: File not found
+
+components:
+  schemas:
+    MaquetteAPI:
+      type: object
+      properties:
+        identifiant:
+          type: string
+        filename:
+          type: string
+        fileType:
+          type: string
+        fileSize:
+          type: string
+        keySousRubrique:
+          type: string
+        projectId:
+          type: string
+        titrePage:
+          type: string
+        maquette:
+          type: string
+          format: byte
+    PageAPI:
+      type: object
+      required:
+        - titrePage
+      properties:
+        titrePage:
+          type: string
+        rubriquesPages:
+          type: array
+          items:
+            $ref: '#/components/schemas/RubriquesPageAPI'
+    ProjectToCreate:
+      type: object
+      required:
+        - titre
+      properties:
+        titre:
+          type: string
+    PageToCreate:
+      type: object
+      required:
+        - identifiantProjet
+        - titrePage
+        - version
+      properties:
+        identifiantProject:
+          type: string
+          description: Identifiant du projet
+        titrePage:
+          type: string
+          description: Titre de la page
+        version:
+          type: string
+          description: Version du référentiel utilisé dans la page
+    RubriquesPageAPI:
+      type: object
+      required:
+        - keyRubriquesPage
+        - sousRubriquesPage
+      properties:
+        keyRubriquesPage:
+          type: string
+        sousRubriquesPage:
+          type: array
+          items:
+            $ref: '#/components/schemas/SousRubriquePageAPI'
+    SousRubriquePageAPI:
+      type: object
+      required:
+        - keySousRubriquesPage
+        - feuilleDeRouteUXPage
+        - feuilleDeRouteFoncPage
+        - feuilleDeRouteDevPage
+        - maquette
+      properties:
+        keySousRubriquesPage:
+          type: string
+        feuilleDeRouteUXPage:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeuilleDeRouteUXPageAPI'
+        feuilleDeRouteFoncPage:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeuilleDeRouteFoncPageAPI'
+        feuilleDeRouteDevPage:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeuilleDeRouteDevPageAPI'
+        maquette:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaquetteAPI'
+    FeuilleDeRouteDevPageAPI:
+      type: object
+      required:
+        - keyFeuilleDeRouteDevPage
+        - criteresDevPage
+        - avancementDev;
+      properties:
+        keyFeuilleDeRouteDevPage:
+          type: string
+        avancementDev:
+          type: integer
+        criteresDevPage:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriteresDevPageAPI'
+    CriteresDevPageAPI:
+      type: object
+      required:
+        - etat
+        - keyCritereDev
+      properties:
+        etat:
+          type: string
+          enum: ['traite', 'nontraite', 'nonapplicable']
+        keyCritereDev:
+          type: string
+    FeuilleDeRouteFoncPageAPI:
+      type: object
+      required:
+        - keyFeuilleDeRouteFoncPage
+        - criteresFoncPage
+        - avancementFonc;
+      properties:
+        keyFeuilleDeRouteFoncPage:
+          type: string
+        avancementFonc:
+          type: integer
+        criteresFoncPage:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriteresFoncPageAPI'
+    CriteresFoncPageAPI:
+      type: object
+      required:
+        - keyCritereFonc
+        - etat
+      properties:
+        keyCritereFonc:
+          type: string
+        etat:
+          type: string
+          enum: ['traite', 'nontraite', 'nonapplicable']
+    FeuilleDeRouteUXPageAPI:
+      type: object
+      required:
+        - keyFeuilleDeRouteUXPage
+        - criteresUXPage
+        - avancementUX;
+      properties:
+        keyFeuilleDeRouteUXPage:
+          type: string
+        avancementUX:
+          type: integer
+        criteresUXPage:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriteresUXPageAPI'
+    CriteresUXPageAPI:
+      type: object
+      required:
+        - keyCritereUX
+        - etat
+      properties:
+        keyCritereUX:
+          type: string
+        etat:
+          type: string
+          enum: ['traite', 'nontraite', 'nonapplicable']
+    ProjectAPI:
+      type: object
+      required:
+        - titre
+        - dateCreation
+        - identifiant
+      properties:
+        titre:
+          type: string
+        dateCreation:
+          type: string
+          format: date
+        identifiant:
+          type: string
+        dateDerniereModification:
+          type: string
+          format: date
+        avancementGlobal:
+          type: integer
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PageAPI'
+    ReferentielAPI:
+      type: object
+      required:
+        - version
+        - rubriques
+      properties:
+        version:
+          type: string
+        rubriques:
+          type: array
+          items:
+            $ref: '#/components/schemas/RubriqueAPI'
+    RubriqueAPI:
+      type: object
+      required:
+        - titre
+        - keyRubriques
+        - sousRubriques
+      properties:
+        titre:
+          type: string
+        keyRubriques:
+          type: string
+        sousRubriques:
+          type: array
+          items:
+            $ref: '#/components/schemas/SousRubriqueAPI'
+    SousRubriqueAPI:
+      type: object
+      required:
+        - titre
+        - keySousRubriques
+        - sousRubriqueUx
+        - sousRubriqueFonctionnelle
+        - sousRubriqueDeveloppement
+      properties:
+        titre:
+          type: string
+        keySousRubriques:
+          type: string
+        sousRubriqueUx:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeuilleDeRouteUXAPI'
+        sousRubriqueFonctionnelle:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeuilleDeRouteFoncAPI'
+        sousRubriqueDeveloppement:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeuilleDeRouteDevAPI'
+    FeuilleDeRouteDevAPI:
+      type: object
+      required:
+        - titre
+        - keyFeuilleDeRouteDev
+        - criteresDevList
+        - pratiquesDevList
+      properties:
+        titre:
+          type: string
+        keyFeuilleDeRouteDev:
+          type: string
+        criteresDevList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriteresDevAPI'
+        pratiquesDevList:
+          type: array
+          items:
+            $ref: '#/components/schemas/PratiquesDevAPI'
+    CriteresDevAPI:
+      type: object
+      required:
+        - critereDev
+        - refRGAA
+        - keyCritereDev
+      properties:
+        critereDev:
+          type: string
+        refRGAA:
+          type: string
+        keyCritereDev:
+          type: string
+    PratiquesDevAPI:
+      type: object
+      required:
+        - pratiqueDev
+        - keyPratiqueDev
+      properties:
+        pratiqueDev:
+          type: string
+        keyPratiqueDev:
+          type: string
+    FeuilleDeRouteFoncAPI:
+      type: object
+      required:
+        - titre
+        - keyFeuilleDeRouteFonc
+        - criteresFoncList
+        - pratiquesFoncList
+      properties:
+        titre:
+          type: string
+        keyFeuilleDeRouteFonc:
+          type: string
+        criteresFoncList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriteresFoncAPI'
+        pratiquesFoncList:
+          type: array
+          items:
+            $ref: '#/components/schemas/PratiquesFoncAPI'
+    CriteresFoncAPI:
+      type: object
+      required:
+        - critereFonc
+        - refRGAA
+        - keyCritereFonc
+      properties:
+        critereFonc:
+          type: string
+        refRGAA:
+          type: string
+        keyCritereFonc:
+          type: string
+    PratiquesFoncAPI:
+      type: object
+      required:
+        - pratiqueFonc
+        - keyPratiqueFonc
+      properties:
+        pratiqueFonc:
+          type: string
+        keyPratiqueFonc:
+          type: string
+    FeuilleDeRouteUXAPI:
+      type: object
+      required:
+        - titre
+        - keyFeuilleDeRouteUX
+        - criteresUXList
+        - pratiquesUxList
+      properties:
+        titre:
+          type: string
+        keyFeuilleDeRouteUX:
+          type: string
+        criteresUXList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriteresUXAPI'
+        pratiquesUXList:
+          type: array
+          items:
+            $ref: '#/components/schemas/PratiquesUXAPI'
+    CriteresUXAPI:
+      type: object
+      required:
+        - critereUx
+        - refRGAA
+        - keyCritereUX
+      properties:
+        critereUX:
+          type: string
+        refRGAA:
+          type: string
+        keyCritereUX:
+          type: string
+    PratiquesUXAPI:
+      type: object
+      required:
+        - pratiqueUX
+        - keyPratiqueUX
+      properties:
+        pratiqueUX:
+          type: string
+        keyPratiqueUX:
+          type: string

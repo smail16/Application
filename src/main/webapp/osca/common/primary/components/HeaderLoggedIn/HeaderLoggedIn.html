@@ -1,0 +1,18 @@
+<Toolbar role="banner">
+    <template #start>
+        <div class="logo-container">
+            <router-link to="/">
+                <img src="\content\images\logo.jpg" alt="LogoSopra" class="logo" id="logo" />
+            </router-link>
+        </div>
+        <div class="titre-header">
+            <h1 class="osca">{{ t('AppHeader.titre') }}</h1>
+            <h2 class="sous-titre">{{ t('AppHeader.soustitre') }}</h2>
+        </div>
+    </template>
+    <template #end>
+        <div class="button-container">
+            <AppSelecteurLangue class="dropdown" />
+        </div>
+    </template>
+</Toolbar>

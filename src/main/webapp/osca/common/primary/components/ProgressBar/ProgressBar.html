@@ -1,0 +1,8 @@
+<div class="ProgressBar">
+    <div class="knobtitre">
+        <h1>{{ t("LayoutNavigation.avancement") }}</h1>
+    </div>
+    <div class="knob">
+        <Knob v-model="progress" valueTemplate="{value}%" :min="0" :max="100" class="custom-knob" aria-label="avancement global"></Knob>
+    </div>
+</div>

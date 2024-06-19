@@ -1,0 +1,28 @@
+<div class="card flex justify-content-center">
+    <DialogPrime
+        :visible="visible"
+        @update:visible="UpdateVisible"
+        :header="t('AppMaquetteDelete.header')"
+        :style="{ width: '40vw' }"
+        class="dialog"
+        modal
+    
+    >
+        <p>{{ t("AppMaquetteDelete.dialogue") }}</p>
+        <template #footer>
+            <ButtonPrime
+                class="custom-button-annuler"
+                :label="t('AppMaquetteDelete.cancelButton')"
+                icon="pi pi-times"
+                @click="closeDialog"
+            />
+            <ButtonPrime
+                class="custom-button-supprimer"
+                :label="t('AppMaquetteDelete.DeleteButton')"
+                icon="pi pi-check"
+                @click="deleteMaquette(maquetteToDelete)"
+                
+            />
+        </template>
+    </DialogPrime>
+</div>

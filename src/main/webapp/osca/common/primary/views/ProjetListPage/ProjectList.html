@@ -1,0 +1,63 @@
+<div class="grid">
+    <div class="col-12">
+        <AppMenuVue class="col-11 col-md-10 mx-auto" />
+        <div class="col-11 col-md-10 mx-auto">
+            <div class="container">
+                <div class="container-project">
+                    <h1>{{ t("MyProjects.projet") }}</h1>
+                    <router-link to="/CreateProject" class="router-link">
+                        <ButtonPrime class="create" label="Large" size="large" id="createbutton" rounded>
+                            <span>{{ t("MyProjects.create") }}</span>
+                        </ButtonPrime>
+                    </router-link>
+                </div>
+                <div>
+                    <DataTable :value="tableData" class="tableau">
+                        <Column field="CreationDate" :header="t('MyProjects.CreationDate')" class="customcolumn"></Column>
+                        <Column field="NomProjet" :header="t('MyProjects.NomProjet')" class="customcolumn"></Column>
+                        <Column field="DerniereModification" :header="t('MyProjects.dernieremodification')" class="customcolumn"> </Column>
+                        <Column field="Avancement" :header="t('MyProjects.stats')" class="customcolumn"></Column>
+                        <Column field="Actions" :header="t('MyProjects.actions')" class="customcolumn">
+                            <template v-slot:body="{ data: project }">
+                                <div class="buttons-container">
+                                    <ButtonPrime
+                                        class="custom-button-modify"
+                                        :key="project.identifiant"
+                                        icon="pi pi-pencil"
+                                        :aria-label="t('ButtonProjectList.ModifiyLabel')"
+                                        :title="t('ButtonProjectList.ModifyButton')"
+                                        @click="() => redirectToProjectPage(project.identifiant)"
+                                    />
+                                    <ButtonPrime
+                                        class="custom-button-share"
+                                        icon="pi pi-file-export"
+                                        :aria-label="t('ButtonProjectList.ExportLabel')"
+                                        :title="t('ButtonProjectList.ExportButton')"
+                                        @click="() => exportProject(project.identifiant)"
+                                    />
+                                    <ButtonPrime
+                                        class="custom-button-share"
+                                        icon="pi pi-share-alt"
+                                        :aria-label="t('ButtonProjectList.ShareLabel')"
+                                        :title="t('ButtonProjectList.ShareButton')"
+                                    />
+                                    <div>
+                                        <ButtonPrime
+                                            class="custom-button-delete"
+                                            id="custom-button-delete"
+                                            icon="pi pi-trash"
+                                            :aria-label="t('ButtonProjectList.DeleteLabel')"
+                                            :title="t('ButtonProjectList.DeleteButton')"
+                                            @click="() => { projectIdToDelete = project.identifiant; visible = true; }"
+                                        />
+                                    </div>
+                                </div>
+                            </template>
+                        </Column>
+                    </DataTable>
+                    <DialogueSupressionVue v-model:visible="visible" :identifiant="projectIdToDelete" :isProjectDeleted="handelChange" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

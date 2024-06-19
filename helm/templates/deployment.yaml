@@ -1,0 +1,198 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "application.fullname" . }}
+  labels:
+    {{- include "application.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "application.selectorLabels" . | nindent 6 }}
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: {{ .Values.strategy.type }}
+  template:
+    metadata:
+      annotations:
+        {{- include "podAnnotations" . | nindent 8 }}
+      labels:
+        {{- include "application.selectorLabels" . | nindent 8 }}
+    spec:
+      imagePullSecrets:
+        - name: {{ include "application.fullname" . }}
+      {{- if .Values.initContainer.enabled }}
+      initContainers:
+        - name: {{ .Values.initContainer.name }}
+          image: {{ .Values.initContainer.image }}
+          command:
+            {{- toYaml .Values.initContainer.command | nindent 12 }}
+      {{- end }}
+      containers:
+        - name: {{ include "application.fullname" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy | default "Always" }}
+          securityContext:
+            capabilities:
+              drop:
+                - all
+            allowPrivilegeEscalation: false
+          ports:
+            - name: http
+              containerPort: {{ .Values.containerPort | required "The container port must be defined!" }}
+          env:
+            {{- toYaml .Values.env | nindent 12 }}
+          volumeMounts:
+            {{- range $volume := .Values.volumes }}
+            - name: {{ $volume.name }}
+              mountPath: {{ $volume.mountPath }}
+              subPath: {{ $volume.subPath }}
+            {{- end }}
+            {{- range $existingVolume := .Values.existingVolumes }}
+            - name: {{ $existingVolume.name }}
+              mountPath: {{ $existingVolume.mountPath }}
+              subPath: {{ $existingVolume.subPath }}
+            {{- end }}
+          {{- if .Values.livenessProbe.enabled }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.livenessProbe.path | default "/" }}
+              port: http
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+            successThreshold: {{ .Values.livenessProbe.successThreshold }}
+          {{- end }}
+          {{- if .Values.readinessProbe.enabled }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.readinessProbe.path | default "/" }}
+              port: http
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+            successThreshold: {{ .Values.readinessProbe.successThreshold }}
+          {{- end }}
+          {{- if .Values.resources }}
+          resources:
+            {{- if .Values.resources.limits }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu | default "100m" }}
+              memory: {{ .Values.resources.limits.memory | default "512Mi" }}
+            {{- end }}
+            {{- if .Values.resources.requests }}
+            requests:
+              cpu: {{ .Values.resources.requests.cpu | default "10m" }}
+              memory: {{ .Values.resources.requests.memory | default "10Mi" }}
+            {{- end }}
+          {{- end }}
+          {{- if .Values.preStop.enabled }}
+          lifecycle:
+            preStop:
+              httpGet:
+                port: http
+                path: {{ .Values.preStop.path }}
+          {{- end }}
+        {{- if .Values.oauth2Proxy.enabled }}
+        - name: oauth2-proxy
+          image: "{{ .Values.oauth2Proxy.image.repository }}:{{ .Values.oauth2Proxy.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.oauth2Proxy.image.pullPolicy | default "Always" }}
+          securityContext:
+            capabilities:
+              drop:
+                - all
+            allowPrivilegeEscalation: false
+          ports:
+            - name: oauth2proxy
+              {{- if eq .Values.oauth2Proxy.provider "azure" }}
+              containerPort: 8443
+              {{- else }}
+              containerPort: 4180
+              {{- end }}
+              protocol: TCP
+          volumeMounts:
+            - name: configmain
+              mountPath: /etc/oauth2_proxy/oauth2_proxy.cfg
+              subPath: oauth2_proxy.cfg
+            - name: configalpha
+              mountPath: /etc/oauth2_proxy/oauth2_proxy.yml
+              subPath: oauth2_proxy.yml
+            {{- if and (eq .Values.global.deploymentTarget "openshift") (eq .Values.oauth2Proxy.provider "azure") }}
+            - mountPath: /etc/tls/private
+              name: {{ include "application.fullname" . }}-tls
+            {{- end }}
+          args:
+            - --config=/etc/oauth2_proxy/oauth2_proxy.cfg
+            - --alpha-config=/etc/oauth2_proxy/oauth2_proxy.yml
+          readinessProbe:
+            httpGet:
+              path: "/ping"
+              port: oauth2proxy
+              {{- if and (eq .Values.global.deploymentTarget "openshift") (eq .Values.oauth2Proxy.provider "azure") }}
+              scheme: HTTPS
+              {{- end }}
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: "/ping"
+              port: oauth2proxy
+              {{- if and (eq .Values.global.deploymentTarget "openshift") (eq .Values.oauth2Proxy.provider "azure") }}
+              scheme: HTTPS
+              {{- end }}
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          resources:
+            limits:
+              cpu: "20m"
+              memory: "64Mi"
+            requests:
+              cpu: "10m"
+              memory: "30Mi"
+        {{- end }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds | default 30 }}
+      volumes:
+        {{- if .Values.oauth2Proxy.enabled }}
+        {{- if and (eq .Values.global.deploymentTarget "openshift") (eq .Values.oauth2Proxy.provider "azure") }}
+        - name: {{ include "application.fullname" . }}-tls
+          secret:
+            secretName: {{ include "application.fullname" . }}-tls
+        {{- end }}
+        - configMap:
+            name: {{ include "application.fullname" . }}
+          name: configmain
+        - configMap:
+            name: {{ include "application.fullname" . }}
+          name: configalpha
+        {{- end }}
+        {{- range $volume := .Values.volumes }}
+        {{- if eq $volume.type "pvc" }}
+        - name: {{ $volume.name }}
+          persistentVolumeClaim:
+            claimName: {{ include "application.fullname" $ }}-{{ $volume.name }}
+        {{- else if eq $volume.type "configmap" }}
+        - name: {{ $volume.name }}
+          configMap:
+            name: {{ include "application.fullname" $ }}-{{ $volume.name }}
+        {{- else if eq $volume.type "secret" }}
+        - name: {{ $volume.name }}
+          secret:
+            secretName: {{ include "application.fullname" $ }}-{{ $volume.name }}
+        {{- end }}
+        {{- end }}
+        {{- range $existingVolume := .Values.existingVolumes }}
+        {{- if eq $existingVolume.type "pvc" }}
+        - name: {{ $existingVolume.name }}
+          persistentVolumeClaim:
+            claimName: {{ $existingVolume.name }}
+        {{- else if eq $existingVolume.type "configmap" }}
+        - name: {{ $existingVolume.name }}
+          configMap:
+            name: {{ $existingVolume.name }}
+        {{- else if eq $existingVolume.type "secret" }}
+        - name: {{ $existingVolume.name }}
+          secret:
+            secretName: {{ $existingVolume.name }}
+        {{- end }}
+        {{- end }}

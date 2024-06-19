@@ -1,0 +1,49 @@
+<Toolbar class="toolbar-footer" role="contentinfo">
+    <template #start>
+        <div class="sopra-footer">
+            <img src="\content\images\logogris.png" alt="LogoSopra du footer" class="logo-footer" />
+            <p class="motto">{{ t('AppFooter.motto') }}</p>
+            <p class="rights">{{ t('AppFooter.rights') }}</p>
+        </div>
+    </template>
+    <template #end>
+        <div class="icone-container">
+            <ButtonPrime
+                class="icone custom-button"
+                id="twitterButton"
+                :title="t('AppFooter.followUsTwitter')"
+                icon="pi pi-twitter"
+                @click="openXLink"
+                :aria-label="t('AppFooter.twitterLabel')"
+            />
+            <ButtonPrime
+                class="icone custom-button"
+                :title="t('AppFooter.followUsInstagram')"
+                icon="pi pi-instagram"
+                @click="openInstagramLink"
+                :aria-label="t('AppFooter.instagramLabel')"
+            />
+            <ButtonPrime
+                class="icone custom-button"
+                :title="t('AppFooter.followUsFacebook')"
+                icon="pi pi-facebook"
+                @click="openFacebookLink"
+                :aria-label="t('AppFooter.facebookLabel')"
+            />
+            <ButtonPrime
+                class="icone custom-button"
+                :title="t('AppFooter.followUsYoutube')"
+                icon="pi pi-youtube"
+                @click="openYouTubeLink"
+                :aria-label="t('AppFooter.youtubeLabel')"
+            />
+            <ButtonPrime
+                class="icone custom-button"
+                :title="t('AppFooter.followUsLinkedIn')"
+                icon="pi pi-linkedin"
+                @click="openLinkedInLink"
+                :aria-label="t('AppFooter.linkedInLabel')"
+            />
+        </div>
+    </template>
+</Toolbar>

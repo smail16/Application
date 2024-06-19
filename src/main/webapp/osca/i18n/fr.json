@@ -1,0 +1,203 @@
+{
+    "AppLogin": {
+        "login": "S'enregister"
+    },
+    "AppFooter": {
+        "motto": "The world is how we shape it",
+        "rights": "Sopra Steria 2023©",
+        "followUsTwitter": "Suivez-nous sur Twitter",
+        "followUsInstagram": "Suivez-nous sur Instagram",
+        "followUsFacebook": "Suivez-nous sur Facebook",
+        "followUsYoutube": "Suivez-nous sur Youtube",
+        "followUsLinkedIn": "Suivez-nous sur Linkedin",
+        "twitterLabel": "lien twitter",
+        "instagramLabel": "lien instagram",
+        "facebookLabel": "lien facebook",
+        "youtubeLabel": "lien youtube",
+        "linkedInLabel": "lien linkedIn"
+    },
+    "AppHeader": {
+        "titre": "OSCA",
+        "soustitre": "Outil de Suivi de Conception d'Accessibilité"
+    },
+    "LoggedInDemo": {
+        "Name": "John Doe"
+    },
+    "AppMenu": {
+        "Accueil": "Accueil",
+        "Nouveau": "Nouveau projet",
+        "MesProjets": "Mes projets"
+    },
+    "AppMenuProject": {
+        "Accueil": "Accueil",
+        "Nouveau": "Nouvelle page",
+        "Add": "Ajouter une nouvelle page",
+        "Delete": "Supprimer une page"
+    },
+    "MyProjects": {
+        "projet": "Mes projets",
+        "create": "Créer un projet",
+        "NomProjet": "Nom du projet",
+        "CreationDate": "Date de création",
+        "dernieremodification": "Date de dernière modification",
+        "stats": "Avancement",
+        "role": "Rôle",
+        "actions": "Actions"
+    },
+    "AppDeleteProjectDialog": {
+        "header": "Suppression du projet",
+        "dialogue": "Souhaitez-vous supprimer définitivement le projet ?",
+        "cancelButton": "Annuler",
+        "DeleteButton": "Supprimer"
+    },
+    "DialogueDeletePage": {
+        "header": "Suppression de la page",
+        "dialogue": "Souhaitez-vous supprimer la page :"
+    },
+    "CreateProject": {
+        "NewProject": "Remplissez ce formulaire pour créer un nouveau projet où vous pourrez suivre l'avancement de la conformité RGAA en temps réel avec votre équipe",
+        "create": "Créer un projet",
+        "NomProjet": "Nom du projet",
+        "AddMembers": "Ajouter des membres au projet",
+        "email": "Adresse e-mail",
+        "role": "Rôle",
+        "add": "Ajouter",
+        "end": "Terminer",
+        "ProjectNameLabel": "Nom du projet",
+        "ProjectName": "Veuillez entrer votre nom de projet",
+        "ProjectMailLabel": "L'adresse Email",
+        "ProjectMail": "Veuillez entrer une adresse e-mail valide",
+        "ProjecSelectedRole": "Selectionez un role",
+        "ProjectRole": "Veuillez choisir un rôle parmi les options disponibles",
+        "ProjectAdd": "Veuillez choisir un rôle parmi les options disponibles",
+        "NameRequired": "Le nom du projet est obligatoire",
+        "EmailRequired": "Un e-mail est requis",
+        "InvalidEmail": "L'e-mail doit être valide",
+        "NomTropLong": "Titre de projet invalide. Votre titre de projet doit être inférieur à 50 caractères",
+        "NameNotUnique": "Ce titre déjà utilisé"
+    },
+    "HomePage": {
+        "main": "L'outil collaboratif permettant à différents acteurs de suivre la mise en conformité des critères RGAA sur un projet",
+        "create": "Créer un projet",
+        "commentcamarche": "Comment ça marche",
+        "createIcone": "Créer un projet et ajouter les parties prenantes",
+        "conforme": "Renseigner l'état de mise en conformité",
+        "rapport": "Générer le rapport de mise en conformité",
+        "titre": "OSCA",
+        "createproject": "Créer un projet"
+    },
+    "LayoutNavigation": {
+        "titreprojet": "Projet GOLDE",
+        "avancement": "Avancement global"
+    },
+    "AppMaquette": {
+        "header": "Maquette annotée",
+        "chooseLabel":"Ajouter une maquette",
+        "toastUpload":"Maquette enregistrée avec succès",
+        "toastDownload":"Maquette téléchargée avec succès",
+        "toastDelete":"Maquette supprimée avec succès",
+        "toastSizeFile":"Le fichier sélectionné dépasse la taille maximale autorisée."
+    },
+    "AppMaquetteDelete": {
+        "header": "Suppression de la maquette",
+        "dialogue": "Souhaitez-vous supprimer cette maquette de la sous-rubrique ? Attention, cette suppression est définitive.",
+        "cancelButton": "Annuler",
+        "DeleteButton": "Supprimer"
+    },
+    "AppRubrique": {
+        "image": "1. Images",
+        "deco": "1.1 Images pertinentes ou décoratives",
+        "captcha": "1.2 Captcha",
+        "information": "2. Présentation de l'information",
+        "forms": "3. Formulaire",
+        "text": "4. Textes et liens",
+        "navigation": "5. Navigation",
+        "other": "6. Autres éléments",
+        "titre": "Rubriques"
+    },
+    "AppUpload": {
+        "telecharger": "Faites glisser et déposez la maquette annotée ici pour la télécharger",
+        "taille": "Taille Maximale : 1 Mo",
+        "format": "Format supportés: jpg, png"
+    },
+    "ImageDescription": {
+        "header": "Lignes directrices",
+        "soustitre": "Chaque image porteuse d'information a une alternative textuelle. A contrario, une image ne doit pas être décrite si elle n'apporte d'information."
+    },
+    "ImageTabMenu": {
+        "UXRoadMap": "Feuille de route UX",
+        "DevelopRoadMap": "Feuille de route Développement",
+        "FunctionRoadMap": "Feuille de route Fonctionnelle"
+    },
+    "UXRoadMap": {
+        "check": "Veuillez cocher la case une fois l'instruction vérifiée"
+    },
+    "UXCheckBoxList": {
+        "un": "Les alternatives des images pertinentes sont definies (sur la maquette ou dans le bloc de commentaires)",
+        "deux": "Les légendes d'images, si elles existent, sont définies",
+        "trois": "Les descriptions des images complexes sont définies"
+    },
+    "UXGoodPractice": {
+        "header": "Bonnes pratiques UX",
+        "texte": "La description de l'image elle-même n'apportera pas d'information pertinente",
+        "deux": "Une vignette représentant la couverture d'un document à télécharger n'aura pas besoin d'être écrite : le titre du document, le format et le poids du fichier seront suffisants."
+    },
+    "UXComments": {
+        "header": "Commentaires"
+    },
+    "DevelopCheckBoxList": {
+        "un": "Les alternatives des images pertinentes sont associées à leurs images",
+        "deux": "Les légendes d'images, si elles existent, sont définies",
+        "trois": "Les descriptions des images complexes sont associées à leurs images"
+    },
+    "DevelopComments": {
+        "header": "Commentaires"
+    },
+    "DevelopGoodPractice": {
+        "header": "Bonnes pratiques de développement",
+        "texte": "Chaque image texte porteuse d'information, en l'absence d'un mécanisme de remplacement, doit si possible être remplacée par du texte stylé : Utiliser les textes HTML, mis en forme à l'aide des styles CSS.",
+        "deux": "Donner à chaque image img, area décoratives un attribut alt vide",
+        "trois": "Laisser vide les contenus des éléments objects et canvas :<object></object> <canvas></canvas>",
+        "quatre": "La légende adjacente est contenue dans une balise"
+    },
+    "FuncCheckBoxList": {
+        "un": "Les textes (alternatifs, légendes, descriptions) sont définis de manière pertinente",
+        "deux": "Les images pertinentes portent une description détaillée si nécéssaire",
+        "trois": "Les descriptions des images complexes sont définies",
+        "quatre": "Les légendes d'images, si elles existent, sont définies"
+    },
+    "FuncComments": {
+        "header": "Commentaires"
+    },
+    "FuncGoodPractice": {
+        "header": "Bonnes pratiques fonctionnelles",
+        "texte": "Textes de remplacement attendus NB : une alternative de type alt doit rester concise (120 caractères maximum)",
+        "deux": "Une image n'a pas d'intérêt d'être décrite si elle n'apporte pas d'information."
+    },
+    "FuncRoadMap": {
+        "check": "Veuillez cocher la case une fois l'instruction vérifiée"
+    },
+    "ButtonProjectList": {
+        "DeleteButton": "Supprimer le projet ",
+        "DeleteLabel": "Suppression du projet ",
+        "ModifyButton": "Modifier le projet",
+        "ModifyLabel": "Modification du projet",
+        "ShareButton": "Partager le projet",
+        "ShareLabel": "Partager le projet",
+        "ExportButton": "Exporter le projet",
+        "ExportLabel": "Exporter le projet"
+
+    },
+    "DashBoard": {
+        "Message": "Votre project a été crée"
+    },
+    "ListProjectErrors": {
+        "fetchError": "Erreur lors de la récupération des projets"
+    },
+    "DialogueOngletCreation": {
+        "label": "Titre: "
+    },
+    "ProjectPage": {
+        "projetactif": "Aucun projet actif"
+    }
+}

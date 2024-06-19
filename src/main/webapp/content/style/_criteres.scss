@@ -1,0 +1,37 @@
+
+.p-tabview-nav-content {
+    overflow-y: visible ;
+    overflow-x: visible ;
+    
+}
+.tab-view-image {
+    .p-tabview-nav {
+        width: var(--width-max);
+        @include styles-tabview; 
+
+    }.p-tabview-header {
+        flex: auto;
+    
+        }.p-tabview-title {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            white-space: wrap;
+        }
+    
+}
+
+.image-description-soustitre {
+    text-decoration: underline;
+}
+.checkbox-label {
+    @include display-flex;
+    margin-left: 3rem;
+    margin-bottom: 0.6rem;
+}
+.checkbox-container {
+    @include display-flex;
+}
+.checkbox-key {
+    margin-right: 0.6rem;
+}

@@ -1,0 +1,142 @@
+global:
+  deploymentTarget: openshift
+
+# internet → oauth2-proxy → application
+oauth2Proxy:
+  # Enable oauth2-proxy authentication
+  enabled: ${ENABLE_OAUTH_PROXY}
+  # The image to be used for the container
+  image:
+    repository: ${BUILD_REGISTRY_IMAGE}/oauth2-proxy
+    tag: ${OAUTH_PROXY_IMAGE_TAG}
+    pullPolicy: Always
+  # allowed providers are : azure, gitlab, keycloak
+  provider: ${OAUTH_PROXY_PROVIDER}
+  # The client ID
+  clientId: "${OAUTH_PROXY_CLIENT_ID}"
+  # The client secret
+  clientSecret: "${OAUTH_PROXY_CLIENT_SECRET}"
+  # The tenant ID (used only if provider is azure)
+  tenantId: "${OAUTH_PROXY_TENANT_ID}"
+  # The base URL of GitLab/keycloak (used only if provider is gitlab or keycloak)
+  issuerUrl: "${OAUTH_PROXY_ISSUER_URL}"
+  # The realm name to use in Keycloak (used only if provider is keycloak)
+  realm: "${OAUTH_PROXY_KEYCLOAK_REALM}"
+  # Routes on which oauth2-proxy authentication will be skipped
+  skipAuthRoutes:
+    - "GET=^/favicon.ico$"
+  # Skip oauth2-proxy provider selection page
+  skipProviderButton: true
+
+# The image to be used for the container
+image:
+  repository: ${BUILD_REGISTRY_IMAGE}
+  tag: ${IMAGE_TAG_TO_BUILD}
+  pullPolicy: Always
+
+# The image credentials to pull the image from a private registry
+imageCredentials:
+  registry: ${BUILD_REGISTRY}
+  username: ${BUILD_REGISTRY_USER}
+  password: ${BUILD_REGISTRY_PASSWORD}
+
+# The port exposed from the container
+containerPort: 8080
+
+# Jetid related variables.
+jetId: "OSCA"
+
+# The environment variables to define in the container
+env:
+  - name: SPRING_DATA_MONGODB_HOST
+    value: ${MONGO_HOST}
+  - name: SPRING_DATA_MONGODB_PORT
+    value: "27017"
+  - name: SPRING_DATA_MONGODB_DATABASE
+    value: "osca_db"
+  - name: SPRING_DATA_MONGODB_USERNAME
+    value: "userOSCA"
+  - name: SPRING_DATA_MONGODB_PASSWORD
+    value: "userOSCA"
+
+# The volumes to create & mount in the container (type can be pvc, configmap or secret)
+volumes: [ ]
+  # - name: app-data
+  #   type: pvc
+  #   mountPath: /data
+  #   subPath: ""
+  #   storageRequest: 1Gi
+  # - name: app-secret
+  #   type: secret
+  #   mountPath: /secret
+  #   subPath: ""
+  #   data:
+  #     myKey: myValue
+# - name: app-config
+#   type: configmap
+#   mountPath: /config
+#   subPath: ""
+#   data:
+#     myKey: myValue
+
+# Existing volumes to mount in the container (volumes created manually or outside the subchart)
+existingVolumes: [ ]
+
+# The routes to externally expose the application
+routes:
+  - enabled: true
+    name: "" # must be unique
+    host: ${DEPLOY_ROUTE_HOSTNAME}
+    path: /
+
+# The resources to assign to the container
+resources:
+  limits:
+    cpu: 200m
+    memory: 200Mi
+  requests:
+    cpu: 100m
+    memory: 50Mi
+
+# The liveness probe to monitor the liveness of the application
+livenessProbe:
+  enabled: true
+  path: /actuator/health/liveness
+  initialDelaySeconds: 60
+  periodSeconds: 20
+  timeoutSeconds: 1
+  failureThreshold: 3
+  successThreshold: 1
+
+# The readiness probe to monitor the readiness of the application
+readinessProbe:
+  enabled: true
+  path: /actuator/health/readiness
+  initialDelaySeconds: 60
+  periodSeconds: 20
+  timeoutSeconds: 1
+  failureThreshold: 3
+  successThreshold: 1
+
+# The pre-stop lifecycle hook to be run when the application is stopped
+preStop:
+  enabled: false
+  path: /
+
+# The init-container to be run before the main application
+initContainer:
+  enabled: false
+  name: init-container
+  image: ""
+  command: [ ]
+
+replicaCount: 1
+
+terminationGracePeriodSeconds: 30
+
+strategy:
+  type: Recreate
+
+service:
+  type: ClusterIP
+  port: 443

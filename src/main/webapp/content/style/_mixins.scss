@@ -1,0 +1,20 @@
+@mixin styles-tabview  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+@mixin display-flex {
+    display: flex;
+}
+@mixin custom-button-dialog-styles {
+    background-color: var(--color);
+    color: var(--surface-a);
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--surface-a);
+        color: var(--black);
+        border: 0.1rem solid var(--color);
+    }
+}

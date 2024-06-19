@@ -1,0 +1,15 @@
+{{- range $volume := .Values.volumes }}
+{{- if eq $volume.type "configmap" }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "application.fullname" $ }}-{{ $volume.name }}
+  labels:
+    {{- include "application.labels" $ | nindent 4 }}
+  annotations:
+    helm.sh/resource-policy: keep
+data:
+  {{- $volume.data | toYaml | nindent 2 }}
+{{- end }}
+{{- end }}

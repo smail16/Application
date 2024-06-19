@@ -1,0 +1,22 @@
+### Configuration applicative
+server:
+  port: 8080
+  max-http-request-header-size: 20000 
+spring:
+  application:
+    name: OSCA
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: osca_db
+      username: userOSCA
+      password: userOSCA
+### Configuration logs
+logging:
+  level:
+    com.soprasteria: INFO
+### Configuration CORS
+application:
+  cors:
+    allowedOrigins: http://localhost:9000

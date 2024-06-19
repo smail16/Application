@@ -1,0 +1,17 @@
+# This configuration is intended for development purpose, it's **your** responsibility to harden it for production
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:6.0.6
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+
+    container_name: oscaMongodb
+    ports:
+      - 127.0.0.1:27017:27017
+    volumes:
+      - oscaMongodb:/home/docker/oscaMongodb
+      - ./data/refRGAA.json:/data/refRGAA.json:ro
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+volumes:
+  oscaMongodb:
